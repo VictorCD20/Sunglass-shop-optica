@@ -176,8 +176,10 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
                 <!-- Card 1 -->
                 <div class="card animate-on-scroll fade-in-up" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); transition-delay: 0.1s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='var(--shadow-lg)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
-                    <div style="height: 200px; overflow: hidden;">
-                        <img src="images/expert_fitting_1783195374148.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="height: 200px; overflow: hidden; position: relative; background: #000;">
+                        <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                            <source src="assets/videos/VISION FIRST INFINITE - copia.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <div style="padding: 30px;">
                         <h3 style="color: var(--primary-dark); margin-bottom: 12px;">Nuestra Experiencia</h3>
@@ -188,8 +190,31 @@
 
                 <!-- Card 2 -->
                 <div class="card animate-on-scroll fade-in-up" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); transition-delay: 0.2s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='var(--shadow-lg)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
-                    <div style="height: 200px; background: linear-gradient(45deg, var(--primary-dark), #1a365d); display: flex; align-items: center; justify-content: center;">
-                        <i class="fa-solid fa-gem" style="font-size: 5rem; color: var(--primary-gold);"></i>
+                    <div style="height: 200px; overflow: hidden; position: relative; background: #000;">
+                        <!-- Carousel Container -->
+                        <div class="card-carousel" style="width: 100%; height: 100%; position: relative;">
+                            <!-- Slide 1: Ray-Ban -->
+                            <div class="carousel-slide active" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 1; transition: opacity 1s ease; pointer-events: auto;">
+                                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                                    <source src="assets/imagenes_catalogo/RayBan/RayBanVid2.mp4" type="video/mp4">
+                                </video>
+                                <span style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.75); color: #fff; padding: 6px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; z-index: 2;">Ray-Ban</span>
+                            </div>
+                            <!-- Slide 2: Vogue -->
+                            <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease; pointer-events: none;">
+                                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                                    <source src="assets/imagenes_catalogo/Vogue/VogueVid1.mp4" type="video/mp4">
+                                </video>
+                                <span style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.75); color: #fff; padding: 6px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; z-index: 2;">Vogue Eyewear</span>
+                            </div>
+                            <!-- Slide 3: Guess -->
+                            <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease; pointer-events: none;">
+                                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                                    <source src="assets/imagenes_catalogo/Guess/GuessVid11.mp4" type="video/mp4">
+                                </video>
+                                <span style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.75); color: #fff; padding: 6px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; z-index: 2;">Guess</span>
+                            </div>
+                        </div>
                     </div>
                     <div style="padding: 30px;">
                         <h3 style="color: var(--primary-dark); margin-bottom: 12px;">Marcas & Calidad</h3>
@@ -200,8 +225,10 @@
 
                 <!-- Card 3 -->
                 <div class="card animate-on-scroll fade-in-up" style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); transition-delay: 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='var(--shadow-lg)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
-                    <div style="height: 200px; background: linear-gradient(45deg, #1a1a1a, #333); display: flex; align-items: center; justify-content: center;">
-                        <i class="fa-solid fa-eye-low-vision" style="font-size: 5rem; color: var(--primary-gold);"></i>
+                    <div style="height: 200px; overflow: hidden; position: relative; background: #000;">
+                        <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                            <source src="assets/videos/Vision first kodak.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <div style="padding: 30px;">
                         <h3 style="color: var(--primary-dark); margin-bottom: 12px;">Salud Visual</h3>

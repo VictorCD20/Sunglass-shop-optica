@@ -1505,7 +1505,7 @@ model-viewer {
 .editorial-card-media {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 3 / 4; /* Taller editorial aspect ratio to prevent cropping vertical model photos */
     border-radius: var(--radius-lg);
     background-color: #111111;
 }
@@ -1519,7 +1519,12 @@ model-viewer {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center; /* Default to center for balanced composition */
     transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.editorial-card-media.align-bottom img {
+    object-position: bottom center; /* Specifically for brands like Ray-Ban with logos at the bottom */
 }
 
 .editorial-card:hover {

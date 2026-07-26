@@ -241,3 +241,25 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
+
+// 7. Card Brand Carousel Auto-Cycling
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.card-carousel .carousel-slide');
+    if (slides.length === 0) return;
+    
+    let currentIndex = 0;
+    setInterval(() => {
+        // Fade out current slide
+        slides[currentIndex].style.opacity = 0;
+        slides[currentIndex].style.pointerEvents = 'none';
+        slides[currentIndex].classList.remove('active');
+        
+        // Advance index
+        currentIndex = (currentIndex + 1) % slides.length;
+        
+        // Fade in new slide
+        slides[currentIndex].style.opacity = 1;
+        slides[currentIndex].style.pointerEvents = 'auto';
+        slides[currentIndex].classList.add('active');
+    }, 4000); // Transitions every 4 seconds
+});
