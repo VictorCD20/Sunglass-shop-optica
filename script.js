@@ -36,6 +36,58 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 2.5. Mobile Menu System
+    const navActions = document.querySelector('.nav-actions');
+    if (navActions) {
+        // Create Toggle Button
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'mobile-menu-toggle';
+        toggleBtn.setAttribute('aria-label', 'Abrir menú');
+        toggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        navActions.appendChild(toggleBtn);
+
+        // Create Panel
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'mobile-menu-panel';
+        mobileMenu.innerHTML = `
+            <div class="mobile-menu-header">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo_sunglasses.svg" alt="SUNGLASS SHOP" class="logo-img" style="height: 35px; width: auto; max-width: 180px;">
+                </a>
+                <button class="mobile-menu-close" aria-label="Cerrar menú"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <nav class="mobile-menu-links">
+                <a href="index.html">Inicio</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="beneficios.html">Beneficios</a>
+                <a href="convenios.html">Convenios</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <a href="https://wa.me/525512345678?text=Hola,%20quiero%20informaci%C3%B3n%20de%20Sunglass%20Shop%20%C3%93ptica." target="_blank" class="btn btn-outline-gold" style="display: flex; justify-content: center; align-items: center; gap: 8px; padding: 12px; border-radius: 50px; text-decoration: none; font-weight: 500; color: #fff; border: 2px solid var(--primary-gold);"><i class="fa-brands fa-whatsapp"></i> Agendar Cita</a>
+            </div>
+        `;
+        document.body.appendChild(mobileMenu);
+
+        // Toggle Actions
+        toggleBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        const closeBtn = mobileMenu.querySelector('.mobile-menu-close');
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Close on link click
+        mobileMenu.querySelectorAll('.mobile-menu-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    }
 });
 
 // 3. Mock Video Player for Visual Health Section
