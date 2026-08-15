@@ -5,9 +5,16 @@ import { useEffect } from "react";
 
 const SELECTOR = [
   "main > section:not(.home-hero):not(.catalog-experience)",
+  ".catalog-experience .section-intro",
+  ".catalog-experience .brand-selector",
+  ".catalog-experience .feature-carousel",
+  ".catalog-experience .availability-note",
+  ".catalog-experience .text-link",
   ".collection-section .section-intro",
   ".collection-section .product-card",
   ".promise-card",
+  ".video-frame",
+  ".dark-feature > div:last-child",
   ".quote-grid blockquote",
   ".service-grid article",
   ".sun-grid article",
@@ -18,6 +25,8 @@ const SELECTOR = [
   ".contact-details article",
   ".feature-links a",
   ".page-hero-copy > *",
+  ".location-card",
+  ".appointment-note",
 ].join(",");
 
 export function ScrollMotion() {
@@ -32,7 +41,7 @@ export function ScrollMotion() {
     targets.forEach((element, index) => {
       element.classList.add("scroll-reveal");
       element.dataset.motion = index % 3 === 0 ? "up" : index % 3 === 1 ? "left" : "right";
-      element.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
+      element.style.setProperty("--reveal-delay", `${(index % 4) * 75}ms`);
     });
 
     if (reducedMotion) {
@@ -40,15 +49,22 @@ export function ScrollMotion() {
       return;
     }
 
+    const reveal = (element: HTMLElement) => element.classList.add("is-visible");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
+        reveal(entry.target as HTMLElement);
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8%" });
+    }, { threshold: 0.06, rootMargin: "0px 0px -5%" });
 
-    requestAnimationFrame(() => targets.forEach((element) => observer.observe(element)));
+    requestAnimationFrame(() => {
+      targets.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.96 && rect.bottom > 0) reveal(element);
+        else observer.observe(element);
+      });
+    });
     return () => observer.disconnect();
   }, [pathname]);
 
