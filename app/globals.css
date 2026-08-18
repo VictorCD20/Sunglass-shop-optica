@@ -178,6 +178,94 @@
   .mobile-panel a{font-size:clamp(2rem,7vw,3.1rem)}
 }
 
+/* Three-block storefront: presentation, catalog and services */
+.hero-slide video{width:100%;height:100%;object-fit:cover;object-position:center 24%}
+.home-catalog{background:#f2ede5}
+.catalog-heading{display:grid;grid-template-columns:1.05fr .95fr;gap:8vw;align-items:end;margin-bottom:4rem}
+.catalog-heading h2{font-size:clamp(3rem,6vw,6.4rem);line-height:.92;margin:1rem 0 0}
+.catalog-heading p{color:var(--muted);font-size:1.05rem}
+.catalog-brand-list{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.4rem}
+.catalog-brand-list a{border:1px solid var(--line);border-radius:999px;padding:.65rem .9rem;font-size:.7rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase;transition:.3s}
+.catalog-brand-list a:hover{background:#111;color:#fff;border-color:#111;transform:translateY(-2px)}
+.home-product-groups{display:grid;gap:1.5rem}
+.product-grid--compact{grid-template-columns:repeat(3,minmax(0,1fr))}
+.product-card{display:block;min-width:0;border:1px solid rgba(17,16,14,.08)}
+.product-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:#ddd6ca}
+.product-media img,.product-media video{width:100%;height:100%;object-fit:cover;object-position:center 24%;transition:transform .65s cubic-bezier(.2,.8,.2,1)}
+.product-card:hover .product-media img,.product-card:hover .product-media video{transform:scale(1.04)}
+.product-brand{position:absolute;left:1rem;top:1rem;width:max-content;border-radius:999px;background:rgba(10,10,9,.78);color:#fff!important;padding:.5rem .75rem;backdrop-filter:blur(10px)}
+.product-information{padding:1.45rem!important}
+.product-heading{display:flex;gap:1rem;align-items:flex-start;justify-content:space-between}
+.product-heading h3{margin:.35rem 0 .7rem}
+.product-heading svg{flex:none;width:20px;height:20px}
+.product-availability{margin:0;padding:.9rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:.55rem}
+.product-availability div{display:grid;grid-template-columns:70px minmax(0,1fr);gap:.75rem}
+.product-availability dt{font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.product-availability dd{margin:0;font-size:.8rem;font-weight:650}
+.product-points{margin:1rem 0 0;padding:0;list-style:none;display:grid;gap:.5rem}
+.product-points li{position:relative;padding-left:1rem;color:var(--muted);font-size:.78rem;line-height:1.45}
+.product-points li:before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.collection-section.dark .product-availability{border-color:#383836}.collection-section.dark .product-availability dt,.collection-section.dark .product-points li{color:#aaa}
+.inventory-disclaimer{margin-top:1rem;padding:.8rem 1rem;border-left:2px solid var(--gold);font-size:.82rem!important}
+.catalog-actions{display:flex;gap:1.5rem;justify-content:space-between;align-items:center;margin-top:2.5rem}
+.catalog-actions p{max-width:520px;margin:0;color:var(--muted);font-size:.88rem}
+
+.home-services{background:#10100f;color:#fff}
+.home-services .section-intro p{color:#aaa}
+.essential-services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-bottom:1rem}
+.essential-services article{position:relative;min-height:300px;padding:2.5rem;border:1px solid #2d2d2b;border-radius:var(--card-radius);background:#171716;transition:.4s}
+.essential-services article:hover{transform:translateY(-6px);border-color:var(--gold);background:#1d1d1b}
+.essential-services article>svg{width:42px;height:42px;color:var(--gold);margin-bottom:4rem}
+.essential-services article>span{position:absolute;right:2rem;top:2rem;color:#686862;font-family:var(--serif)}
+.essential-services h3{font-family:var(--serif);font-size:clamp(2rem,3vw,3rem);margin:0 0 .7rem}
+.essential-services p{max-width:560px;margin:0;color:#aaa}
+.sports-service{display:grid;grid-template-columns:1.05fr .95fr;min-height:680px;background:#080808;color:#fff;overflow:hidden}
+.sports-service-media{position:relative;min-height:580px;overflow:hidden}
+.sports-service-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,rgba(8,8,8,.5))}
+.sports-service-media video{width:100%;height:100%;object-fit:cover;object-position:center 24%}
+.sports-service-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(2.5rem,6vw,6rem)}
+.sports-service-copy h2{font-size:clamp(3rem,5vw,5.8rem);line-height:.92;margin:1rem 0 1.4rem}
+.sports-service-copy>p{color:#aaa}
+.sports-icon{display:flex;gap:.65rem;margin-top:2rem;color:var(--gold)}
+.sports-icon svg{width:34px;height:34px}
+.sports-service-copy ul{width:100%;padding:0;margin:1rem 0 2.2rem;list-style:none;border-top:1px solid #2d2d2b}
+.sports-service-copy li{display:flex;align-items:center;gap:.8rem;padding:1rem 0;border-bottom:1px solid #2d2d2b;color:#ddd}
+.sports-service-copy li svg{width:20px;color:var(--gold);flex:none}
+.sports-service--page{margin:0}
+.simple-contact-cta{padding:7rem max(5vw,2rem);background:#10100f;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:3rem}
+.simple-contact-cta>div{max-width:760px}.simple-contact-cta h2{font-size:clamp(3rem,5vw,5.5rem);line-height:.95;margin:1rem 0}.simple-contact-cta p{color:#aaa;margin:0}
+
+@media(max-width:980px){
+  .catalog-heading,.sports-service{grid-template-columns:1fr}
+  .product-grid--compact{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sports-service-media{min-height:540px}
+  .sports-service-media:after{background:linear-gradient(0deg,rgba(8,8,8,.55),transparent 45%)}
+  .simple-contact-cta{align-items:flex-start;flex-direction:column}
+}
+
+@media(max-width:640px){
+  .catalog-heading{margin-bottom:2.5rem}
+  .catalog-heading h2{font-size:clamp(2.8rem,14vw,4.2rem)}
+  .product-grid--compact,.essential-services{grid-template-columns:minmax(0,1fr)}
+  .home-product-groups{gap:1rem}
+  .product-information{padding:1.2rem!important}
+  .catalog-actions{align-items:flex-start;flex-direction:column}
+  .essential-services article{min-height:280px;padding:2rem}
+  .sports-service{min-height:0;margin-inline:-1.2rem}
+  .sports-service-media{min-height:440px}
+  .sports-service-copy{padding:3.5rem 1.2rem 4.5rem}
+  .sports-service-copy h2{font-size:clamp(2.8rem,13vw,4.2rem)}
+  .simple-contact-cta{padding:5.5rem 1.2rem}
+}
+
+@media(max-width:900px) and (orientation:landscape){
+  .product-grid--compact{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sports-service{grid-template-columns:1fr 1fr}
+  .sports-service-media{min-height:520px}
+  .sports-service-copy{padding:2.5rem 1.5rem}
+  .sports-service-copy h2{font-size:clamp(2.5rem,5vw,3.6rem)}
+}
+
 @media(prefers-reduced-motion:reduce){
   .brand-marquee-track{animation-play-state:paused}
   .motion-ready .scroll-reveal{opacity:1!important;filter:none!important;transform:none!important}

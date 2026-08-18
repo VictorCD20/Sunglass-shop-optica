@@ -1,18 +1,35 @@
 import Link from "next/link";
-import { ArrowRight, Award, Eye, HeartHandshake, ShieldCheck, Sparkles, Wrench } from "lucide-react";
+import { Bike, Eye, Glasses, Sparkles, Sun, Wrench } from "lucide-react";
 import { HomeHero } from "@/components/home-hero";
+import { ProductGrid } from "@/components/product-grid";
 import { Button } from "@/components/ui/button";
-import { whatsapp } from "@/lib/site-data";
+import { BRANDS, COLLECTIONS, whatsapp } from "@/lib/site-data";
 
 export default function Home() {
   return <main>
     <HomeHero />
-    <section className="section split-intro"><div><span className="eyebrow">Nuestra promesa</span><h2>Tu visión merece<br/><em>algo extraordinario.</em></h2></div><p>Combinamos criterio clínico, estilo y acompañamiento experto para ayudarte a elegir los lentes que realmente funcionan para ti.</p></section>
-    <section className="cards-three section topless">
-      {[{icon:<Wrench/>,title:"Mantenimiento 90 Días",text:"Ajustes, limpieza y mantenimiento especializado para conservar tus lentes en las mejores condiciones."},{icon:<ShieldCheck/>,title:"Refacciones Originales",text:"Soluciones y piezas originales, sujetas a modelo, marca y disponibilidad."},{icon:<Eye/>,title:"Visagismo Clínico",text:"Analizamos proporciones, estilo y necesidades visuales para encontrar tu armazón ideal."}].map((card, index) => <article key={card.title} className="promise-card"><span>0{index+1}</span>{card.icon}<h3>{card.title}</h3><p>{card.text}</p></article>)}
+    <section id="catalogo-inicio" className="home-catalog section">
+      <div className="catalog-heading">
+        <div><span className="eyebrow">Catálogo real</span><h2>Modelos disponibles.<br/><em>Sin navegación infinita.</em></h2></div>
+        <div><p>Una selección rápida del inventario registrado. Los colores, precios y existencias se confirman directamente en la sucursal antes de tu visita.</p><div className="catalog-brand-list">{BRANDS.map((brand) => <Link href={`/catalogo?marca=${brand.id}#catalogo-marcas`} key={brand.id}>{brand.name}</Link>)}</div></div>
+      </div>
+      <div className="home-product-groups">
+        <ProductGrid brand="Ray-Ban" products={COLLECTIONS["ray-ban"].slice(0, 3)} compact />
+        <ProductGrid brand="Guess" products={COLLECTIONS.guess.slice(0, 3)} compact />
+        <ProductGrid brand="Vogue Eyewear" products={COLLECTIONS.vogue.slice(0, 3)} compact />
+      </div>
+      <div className="catalog-actions"><Button asChild variant="dark"><Link href="/catalogo">Ver catálogo completo</Link></Button><p>La prueba presencial permite evaluar proporciones, puente, ajuste y comodidad.</p></div>
     </section>
-    <section className="dark-feature section"><div className="video-frame"><video src="/assets/catalogo/RayBan/RayBanVid1.mp4" autoPlay muted loop playsInline /></div><div><span className="eyebrow gold">Todo en un solo lugar</span><h2>Nuestra experiencia,<br/>al servicio de tu mirada.</h2><p>Explora marcas exclusivas, servicios especializados, beneficios y soluciones corporativas con una atención cercana.</p><div className="feature-links"><Link href="/servicios"><Sparkles/>Servicios especializados<ArrowRight/></Link><Link href="/beneficios"><Award/>Beneficios y pagos<ArrowRight/></Link><Link href="/convenios"><HeartHandshake/>Convenios corporativos<ArrowRight/></Link></div></div></section>
-    <section className="testimonials section"><div className="section-intro"><span className="eyebrow">Experiencias reales</span><h2>Confianza que<br/><em>se ve y se siente.</em></h2></div><div className="quote-grid"><blockquote>“Excelente atención y asesoría. Me ayudaron a elegir el armazón que mejor se adapta a mi rostro.”<cite>Cliente verificado</cite></blockquote><blockquote>“La atención fue muy profesional y el mantenimiento de mis lentes quedó perfecto.”<cite>Cliente verificado</cite></blockquote></div></section>
-    <section className="final-cta"><span className="eyebrow gold">Comienza hoy</span><h2>Encuentra los lentes<br/><em>que hablan de ti.</em></h2><p>Visítanos en Plaza Dorada o recibe atención directa por WhatsApp.</p><Button asChild><a href={whatsapp()} target="_blank">Hablar con un asesor</a></Button></section>
+    <section id="servicios-inicio" className="home-services section">
+      <div className="section-intro"><span className="eyebrow gold">Servicios de la óptica</span><h2>Más que un armazón.<br/><em>Una solución para tu visión.</em></h2><p>La atención continúa en sucursal con evaluación, ajuste y soluciones especializadas.</p></div>
+      <div className="essential-services">
+        <article><Eye/><span>01</span><h3>Optometría integral</h3><p>Evaluación visual profesional y asesoría para definir la graduación y el tipo de lente adecuado.</p></article>
+        <article><Wrench/><span>02</span><h3>Reparación de lentes</h3><p>Ajuste, mantenimiento, reparación y sustitución de piezas, sujetos al modelo y disponibilidad.</p></article>
+      </div>
+      <div className="sports-service">
+        <div className="sports-service-media"><video src="/assets/catalogo/RayBan/RayBanVid4.mp4" autoPlay muted loop playsInline preload="metadata" /></div>
+        <div className="sports-service-copy"><span className="eyebrow gold">Servicio especializado</span><div className="sports-icon"><Bike/><Sparkles/></div><h2>Fabricación de lentes deportivas graduadas</h2><p>Soluciones para quienes necesitan visión clara durante la actividad deportiva, incluso en diseños envolventes.</p><ul><li><Glasses/>Graduación de micas curvas</li><li><Sun/>Acabados espejeados</li><li><Sparkles/>Tecnología fotocromática que se oscurece con el sol</li></ul><Button asChild><a href={whatsapp("Hola, quiero información sobre lentes deportivas graduadas.")} target="_blank">Consultar este servicio</a></Button></div>
+      </div>
+    </section>
   </main>;
 }

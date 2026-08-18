@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { CatalogExperience } from "@/components/catalog-experience";
 import { PageHero } from "@/components/page-hero";
+import { ProductGrid } from "@/components/product-grid";
 import { Button } from "@/components/ui/button";
 import { COLLECTIONS, whatsapp } from "@/lib/site-data";
 
 export const metadata: Metadata = { title: "Catálogo", description: "Colecciones de lentes disponibles en Sunglass Shop Óptica." };
 
 function CollectionGrid({ id, title, intro }: { id: string; title: string; intro: string }) {
-  return <section className={`collection-section ${id === "guess" ? "dark" : ""}`}><div className="section-intro"><span className="eyebrow">Colección</span><h2>{title}</h2><p>{intro}</p></div><div className="product-grid">{COLLECTIONS[id].map((item) => <a key={item.name} className="product-card" href={whatsapp(`Hola, quiero agendar una visita para probarme ${item.name} de ${title} en sucursal.`)} target="_blank">{item.type === "video" ? <video src={item.src} muted loop autoPlay playsInline /> : <img src={item.src} alt={`${title} ${item.name}`} />}<div><span>{title}</span><h3>{item.name}</h3><p>{item.detail}</p><b>↗</b></div></a>)}</div></section>;
+  return <section className={`collection-section ${id === "guess" ? "dark" : ""}`}><div className="section-intro"><span className="eyebrow">Colección</span><h2>{title}</h2><p>{intro}</p><p className="inventory-disclaimer">Colores, precio y existencias se confirman en sucursal para no mostrar información desactualizada.</p></div><ProductGrid brand={title} products={COLLECTIONS[id]} /></section>;
 }
 
 export default function Catalogo() {
