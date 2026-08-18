@@ -431,3 +431,113 @@
   .product-detail-shell{padding-top:6rem}
   .product-gallery-stage{aspect-ratio:1.35/1}
 }
+
+/* Catalog v3: persistent navigation, compact responsive media and temporary product renders */
+.site-header{
+  position:fixed;
+  height:76px;
+  background:linear-gradient(180deg,rgba(8,8,8,.94),rgba(8,8,8,.82));
+  border-bottom-color:rgba(255,255,255,.14);
+  box-shadow:0 8px 28px rgba(0,0,0,.12);
+  backdrop-filter:blur(18px) saturate(125%);
+  -webkit-backdrop-filter:blur(18px) saturate(125%);
+}
+.site-header .brand-mark{width:138px}
+.site-header .brand-mark img{height:52px}
+.menu-button{width:44px;height:44px;border-radius:50%;transition:background .3s,color .3s,transform .3s}
+.menu-button:hover{background:rgba(255,255,255,.12);color:var(--gold);transform:scale(1.04)}
+
+.eyewear-sprite{position:relative;display:block;width:100%;height:100%;overflow:hidden;background:#f2eee8}
+.eyewear-sprite>img{
+  position:absolute!important;
+  top:50%;
+  left:0;
+  width:300%!important;
+  height:auto!important;
+  max-width:none!important;
+  object-fit:initial!important;
+  object-position:initial!important;
+  transform:translate(calc(var(--sprite-index) * -33.333333%),-50%);
+  transition:transform .6s cubic-bezier(.2,.8,.2,1)!important;
+}
+.product-card:hover .eyewear-sprite>img{transform:translate(calc(var(--sprite-index) * -33.333333%),-50%) scale(1.025)!important}
+.product-media{aspect-ratio:16/10;max-height:330px;background:#f2eee8}
+.product-brand{z-index:2}
+.product-sample,.product-gallery-sample{
+  position:absolute;
+  z-index:4;
+  padding:.48rem .7rem;
+  border-radius:999px;
+  background:rgba(255,255,255,.86);
+  color:#39342d!important;
+  font-size:.56rem!important;
+  font-weight:850;
+  letter-spacing:.1em;
+  line-height:1;
+  text-transform:uppercase;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+  backdrop-filter:blur(10px);
+}
+.product-sample{right:1rem;top:1rem}
+.product-gallery-sample{left:1rem;top:1rem}
+
+.product-detail-shell{padding-top:6.75rem}
+.product-detail-layout{grid-template-columns:minmax(0,1.12fr) minmax(340px,.88fr);gap:clamp(1.5rem,4vw,4.5rem)}
+.product-gallery-stage{height:clamp(360px,55svh,570px);aspect-ratio:auto;background:#f2eee8}
+.product-gallery-stage>.eyewear-sprite{width:100%;height:100%}
+.product-gallery-thumbnails button{aspect-ratio:2/1;background:#f2eee8}
+.product-gallery-thumbnails .eyewear-sprite{width:100%;height:100%}
+.product-detail-summary h1{font-size:clamp(3rem,4.6vw,5.4rem)}
+
+.sports-service{min-height:560px;height:min(76svh,720px)}
+.sports-service-media{min-height:0;height:100%}
+.sports-service-media video{object-position:center 18%}
+.sports-service-copy{height:100%;overflow:auto;padding:clamp(2rem,4vw,4.4rem)}
+.sports-service-copy h2{font-size:clamp(2.8rem,4.3vw,4.9rem);margin:.75rem 0 1rem}
+.sports-service-copy .sports-icon{margin-top:1rem}
+.sports-service-copy ul{margin:.7rem 0 1.4rem}
+.sports-service-copy li{padding:.8rem 0}
+
+@media(max-width:980px){
+  .site-header{height:70px;padding-inline:1rem}
+  .site-header .brand-mark{width:126px}
+  .site-header .brand-mark img{height:48px}
+  .mobile-panel{padding-top:6.3rem}
+  .product-detail-layout{grid-template-columns:1fr}
+  .product-gallery-stage{height:min(58svh,520px)}
+  .sports-service{height:auto;min-height:0}
+  .sports-service-media{height:min(64svh,540px);min-height:360px}
+  .sports-service-copy{height:auto;overflow:visible}
+}
+
+@media(max-width:640px){
+  .product-media{aspect-ratio:5/3;max-height:none}
+  .product-detail-shell{padding-top:6rem}
+  .product-gallery-stage{height:min(54svh,430px);min-height:300px;aspect-ratio:auto}
+  .product-gallery-thumbnails button{aspect-ratio:1.45/1}
+  .product-gallery-sample{left:.65rem;top:.65rem;font-size:.49rem!important}
+  .product-sample{right:.7rem;top:.7rem;font-size:.48rem!important}
+  .product-detail-summary h1{font-size:clamp(2.9rem,13vw,4.2rem)}
+  .sports-service{margin-inline:-1.2rem}
+  .sports-service-media{height:52svh;min-height:320px;max-height:430px}
+  .sports-service-media video{object-position:center 15%}
+  .sports-service-copy{padding:3rem 1.2rem 4rem}
+  .sports-service-copy h2{font-size:clamp(2.65rem,12vw,4rem)}
+}
+
+@media(max-width:900px) and (orientation:landscape){
+  .site-header{height:60px}
+  .site-header .brand-mark img{height:42px}
+  .product-detail-shell{padding-top:4.8rem}
+  .product-detail-layout{grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:1.2rem}
+  .product-gallery-stage{height:calc(100svh - 126px);min-height:260px}
+  .product-gallery-thumbnails{display:none}
+  .product-detail-summary h1{font-size:clamp(2.5rem,5vw,3.5rem)}
+  .product-detail-summary>.ui-button--ghost{margin-bottom:1.1rem}
+  .product-description{margin:.9rem 0;font-size:.9rem}
+  .no-price-note{margin:.75rem 0 1rem}
+  .sports-service{grid-template-columns:1fr 1fr;height:auto;min-height:100svh}
+  .sports-service-media{height:auto;min-height:100svh}
+  .sports-service-copy{padding:4.5rem 1.25rem 2rem}
+  .sports-service-copy h2{font-size:clamp(2.3rem,5vw,3.3rem)}
+}

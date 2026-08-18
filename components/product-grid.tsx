@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import type { CSSProperties } from "react";
 import type { Product } from "@/lib/site-data";
 
 export function ProductGrid({
@@ -23,12 +24,20 @@ export function ProductGrid({
           aria-label={`Ver ficha de ${item.name} de ${brand}`}
         >
           <div className="product-media">
-            {item.type === "video" ? (
+            {item.spriteIndex !== undefined ? (
+              <span
+                className="eyewear-sprite"
+                style={{ "--sprite-index": item.spriteIndex } as CSSProperties}
+              >
+                <img src={item.src} alt={`${brand} ${item.name}, vista de tres cuartos`} />
+              </span>
+            ) : item.type === "video" ? (
               <video src={item.src} muted loop autoPlay playsInline preload="metadata" />
             ) : (
               <img src={item.src} alt={`${brand} ${item.name}`} />
             )}
             <span className="product-brand">{brand}</span>
+            {item.spriteIndex !== undefined ? <span className="product-sample">Imagen temporal</span> : null}
           </div>
           <div className="product-information">
             <div className="product-heading">

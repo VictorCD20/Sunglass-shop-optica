@@ -20,10 +20,10 @@ export function SiteHeader() {
       <img src="/assets/logo.png" alt="Sunglass Shop Óptica" />
     </Link>
     <nav className="desktop-nav" aria-label="Navegación principal">
-      {NAV.map(([label, href]) => <Link key={href} href={href} className={path === href ? "active" : ""}>{label}</Link>)}
+      {NAV.map(([label, href]) => <Link key={href} href={href} className={path === href || (href !== "/" && path.startsWith(href)) ? "active" : ""}>{label}</Link>)}
     </nav>
-    <button className="menu-button" aria-label={open ? "Cerrar menú" : "Abrir menú"} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
-    <div className={`mobile-panel ${open ? "open" : ""}`} aria-hidden={!open}>
+    <button type="button" className="menu-button" aria-label={open ? "Cerrar menú" : "Abrir menú"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
+    <div id="mobile-navigation" className={`mobile-panel ${open ? "open" : ""}`} aria-hidden={!open}>
       <span className="eyebrow">Sunglass Shop · Mérida</span>
       {NAV.map(([label, href], index) => <Link key={href} href={href} onClick={() => setOpen(false)} style={{ transitionDelay: `${index * 35}ms` }}>{label}<span>0{index + 1}</span></Link>)}
     </div>

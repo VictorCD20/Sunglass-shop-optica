@@ -1,8 +1,28 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useCallback, useState } from "react";
+import { useCallback, useState, type CSSProperties } from "react";
 import type { ProductMedia } from "@/lib/site-data";
+
+function GalleryMedia({ item, decorative = false }: { item: ProductMedia; decorative?: boolean }) {
+  if (item.spriteIndex !== undefined) {
+    return (
+      <span
+        className="eyewear-sprite"
+        style={{ "--sprite-index": item.spriteIndex } as CSSProperties}
+        role={decorative ? undefined : "img"}
+        aria-label={decorative ? undefined : item.alt}
+        aria-hidden={decorative || undefined}
+      >
+        <img src={item.src} alt="" />
+      </span>
+    );
+  }
+  if (item.type === "video") {
+    return <video src={item.src} autoPlay={!decorative} muted loop={!decorative} playsInline preload="metadata" aria-label={decorative ? undefined : item.alt} />;
+  }
+  return <img src={item.src} alt={decorative ? "" : item.alt} />;
+}
 
 export function ProductGallery({ items, productName }: { items: ProductMedia[]; productName: string }) {
   const [current, setCurrent] = useState(0);
@@ -13,11 +33,8 @@ export function ProductGallery({ items, productName }: { items: ProductMedia[]; 
   return (
     <div className="product-gallery" aria-label={`Galería de ${productName}`}>
       <div className="product-gallery-stage" aria-live="polite">
-        {active.type === "video" ? (
-          <video key={active.src} src={active.src} autoPlay muted loop playsInline preload="metadata" aria-label={active.alt} />
-        ) : (
-          <img key={active.src} src={active.src} alt={active.alt} />
-        )}
+        <GalleryMedia key={`${active.src}-${active.spriteIndex ?? current}`} item={active} />
+        {active.spriteIndex !== undefined ? <span className="product-gallery-sample">Imagen temporal de referencia</span> : null}
         {items.length > 1 && (
           <div className="product-gallery-controls">
             <button type="button" onClick={previous} aria-label="Vista anterior"><ChevronLeft /></button>
@@ -30,14 +47,14 @@ export function ProductGallery({ items, productName }: { items: ProductMedia[]; 
         <div className="product-gallery-thumbnails" role="tablist" aria-label="Vistas del producto">
           {items.map((item, index) => (
             <button
-              key={item.src}
+              key={`${item.src}-${item.spriteIndex ?? index}`}
               type="button"
               role="tab"
               aria-selected={current === index}
               className={current === index ? "active" : ""}
               onClick={() => setCurrent(index)}
             >
-              {item.type === "video" ? <video src={item.src} muted playsInline preload="metadata" /> : <img src={item.src} alt="" />}
+              <GalleryMedia item={item} decorative />
               <span className="sr-only">{item.alt}</span>
             </button>
           ))}
