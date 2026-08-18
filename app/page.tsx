@@ -11,12 +11,12 @@ export default function Home() {
     <section id="catalogo-inicio" className="home-catalog section">
       <div className="catalog-heading">
         <div><span className="eyebrow">Catálogo real</span><h2>Modelos disponibles.<br/><em>Sin navegación infinita.</em></h2></div>
-        <div><p>Una selección rápida del inventario registrado. Los colores, precios y existencias se confirman directamente en la sucursal antes de tu visita.</p><div className="catalog-brand-list">{BRANDS.map((brand) => <Link href={`/catalogo?marca=${brand.id}#catalogo-marcas`} key={brand.id}>{brand.name}</Link>)}</div></div>
+        <div><p>Una selección rápida de las colecciones registradas. Los modelos, colores y existencias se confirman directamente en la sucursal antes de tu visita.</p><div className="catalog-brand-list">{BRANDS.map((brand) => <Link href={`/catalogo/${brand.id}`} key={brand.id}>{brand.name}</Link>)}</div></div>
       </div>
       <div className="home-product-groups">
-        <ProductGrid brand="Ray-Ban" products={COLLECTIONS["ray-ban"].slice(0, 3)} compact />
-        <ProductGrid brand="Guess" products={COLLECTIONS.guess.slice(0, 3)} compact />
-        <ProductGrid brand="Vogue Eyewear" products={COLLECTIONS.vogue.slice(0, 3)} compact />
+        <ProductGrid brand="Ray-Ban" brandId="ray-ban" products={COLLECTIONS["ray-ban"].slice(0, 3)} compact />
+        <ProductGrid brand="Guess" brandId="guess" products={COLLECTIONS.guess.slice(0, 3)} compact />
+        <ProductGrid brand="Vogue Eyewear" brandId="vogue" products={COLLECTIONS.vogue.slice(0, 3)} compact />
       </div>
       <div className="catalog-actions"><Button asChild variant="dark"><Link href="/catalogo">Ver catálogo completo</Link></Button><p>La prueba presencial permite evaluar proporciones, puente, ajuste y comodidad.</p></div>
     </section>

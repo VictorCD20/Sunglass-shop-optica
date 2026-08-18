@@ -1,26 +1,26 @@
-import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { Product } from "@/lib/site-data";
-import { whatsapp } from "@/lib/site-data";
 
 export function ProductGrid({
   brand,
+  brandId,
   products,
   compact = false,
 }: {
   brand: string;
+  brandId: string;
   products: Product[];
   compact?: boolean;
 }) {
   return (
     <div className={`product-grid ${compact ? "product-grid--compact" : ""}`}>
       {products.map((item) => (
-        <a
-          key={`${brand}-${item.name}`}
+        <Link
+          key={`${brandId}-${item.slug}`}
           className="product-card"
-          href={whatsapp(`Hola, quiero agendar una visita para probarme ${item.name} de ${brand} en sucursal.`)}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`Consultar ${item.name} de ${brand}`}
+          href={`/catalogo/${brandId}/${item.slug}`}
+          aria-label={`Ver ficha de ${item.name} de ${brand}`}
         >
           <div className="product-media">
             {item.type === "video" ? (
@@ -33,22 +33,19 @@ export function ProductGrid({
           <div className="product-information">
             <div className="product-heading">
               <div>
-                <span>Modelo</span>
+                <span>{item.code ? "Modelo" : "Selección"}</span>
                 <h3>{item.name}</h3>
               </div>
-              <ArrowUpRight aria-hidden="true" />
+              <ArrowRight aria-hidden="true" />
             </div>
             <dl className="product-availability">
-              <div><dt>Colores</dt><dd>Consultar variantes disponibles</dd></div>
-              <div><dt>Precio</dt><dd>Disponible en sucursal</dd></div>
+              <div><dt>Referencia</dt><dd>{item.code ?? "Confirmar en sucursal"}</dd></div>
+              <div><dt>Acabado</dt><dd>{item.color ?? "Variantes según inventario"}</dd></div>
             </dl>
-            <ul className="product-points">
-              <li>{item.detail}</li>
-              <li>Disponibilidad sujeta al inventario de la óptica</li>
-              <li>Prueba y ajuste presencial recomendado</li>
-            </ul>
+            <p className="product-card-summary">{item.detail}</p>
+            <span className="product-card-link">Ver fotos y ficha técnica</span>
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );
