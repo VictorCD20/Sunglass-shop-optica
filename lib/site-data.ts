@@ -19,7 +19,7 @@ export const BRANDS = [
   { id: "carolina-herrera", name: "Carolina Herrera", logo: "/assets/logos/Carolina-Herrera-Logo-PNG.png", logoDark: "/assets/logos/Carolina-Herrera-Logo-PNG.png", media: null },
   { id: "guess", name: "Guess", logo: "/assets/logos/Guess Blanco.png", logoDark: "/assets/logos/Guess negro.png", media: "/assets/catalogo/Guess/Guess11.jpeg" },
   { id: "vogue", name: "Vogue Eyewear", logo: "/assets/logos/Vogue eyewear blanco.png", logoDark: "/assets/logos/Vogue eyewear negro.png", media: null },
-  { id: "oakley", name: "Oakley", logo: "/assets/logos/1785030723724.png", logoDark: "/assets/logos/1785030723724.png", media: null },
+  { id: "oakley", name: "Oakley", logo: "/assets/logos/Oakley Blanco.svg", logoDark: "/assets/logos/Oakley Negro.svg", media: null },
 ] as const;
 
 export type ProductMedia = {
