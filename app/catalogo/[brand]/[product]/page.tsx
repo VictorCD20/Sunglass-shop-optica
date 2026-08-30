@@ -22,7 +22,18 @@ export default async function ProductDetail({ params }: { params: Promise<{ bran
   const brand = getBrand(brandId);
   const product = getProduct(brandId, productSlug);
   if (!brand || !product) notFound();
-  const message = `Hola, quiero agendar una cita para probarme ${product.name} de ${brand.name}${product.code ? `, referencia ${product.code}` : ""}.`;
+  const message = `Hola, vi en el catálogo ${product.name} de ${brand.name}${product.code ? `, referencia ${product.code}` : ""}. Quiero solicitar una cita personal para verlo y probármelo en la sucursal.`;
+  const specRows = product.specs ? [
+    ["Forma", product.specs.shape],
+    ["Material", product.specs.material],
+    ["Ancho de mica", product.specs.lensWidth],
+    ["Puente", product.specs.bridgeWidth],
+    ["Largo de varilla", product.specs.templeLength],
+    ["Alto de mica", product.specs.lensHeight],
+    ["Ajuste", product.specs.fit],
+    ["Puente y nariz", product.specs.bridgeFit],
+    ["Clip-on compatible", product.specs.clipOn],
+  ].filter((entry): entry is [string, string] => Boolean(entry[1])) : [];
 
   return (
     <main className="product-detail-page">
@@ -52,27 +63,19 @@ export default async function ProductDetail({ params }: { params: Promise<{ bran
           <h2>Lo importante,<br/><em>antes de probártelos.</em></h2>
           <p>Las medidas ayudan a comparar, pero el ajuste final depende del puente, las varillas y las proporciones reales del rostro.</p>
         </div>
-        {product.specs ? (
+        {specRows.length ? (
           <div className="technical-layout">
             <div className="technical-table">
-              <div><span>Forma</span><strong>{product.specs.shape}</strong></div>
-              <div><span>Material</span><strong>{product.specs.material}</strong></div>
-              <div><span>Ancho de mica</span><strong>{product.specs.lensWidth}</strong></div>
-              <div><span>Puente</span><strong>{product.specs.bridgeWidth}</strong></div>
-              <div><span>Largo de varilla</span><strong>{product.specs.templeLength}</strong></div>
-              <div><span>Alto de mica</span><strong>{product.specs.lensHeight}</strong></div>
-              <div><span>Ajuste</span><strong>{product.specs.fit}</strong></div>
-              <div><span>Puente y nariz</span><strong>{product.specs.bridgeFit}</strong></div>
-              <div><span>Clip-on compatible</span><strong>{product.specs.clipOn}</strong></div>
+              {specRows.map(([label, value]) => <div key={label}><span>{label}</span><strong>{value}</strong></div>)}
             </div>
             <div className="technical-aside">
-              <Ruler /><h3>Cómo leer la medida</h3><p>El formato ancho–puente indica el ancho de cada mica y la separación del puente en milímetros. La varilla se mide desde la bisagra hasta la punta.</p>
+              <Ruler /><h3>Información verificada</h3><p>La marca, forma y acabado se obtuvieron de las fotografías reales del local. Las medidas y el código exacto se confirman físicamente en sucursal para evitar publicar datos incorrectos.</p>
               {product.officialSource ? <a href={product.officialSource} target="_blank" rel="noreferrer">Consultar referencia del fabricante ↗</a> : null}
             </div>
           </div>
         ) : (
           <div className="technical-pending">
-            <Glasses /><div><h3>Medidas por confirmar en sucursal</h3><p>Esta referencia visual proviene del catálogo del negocio, pero el repositorio no incluye código ni ficha técnica. Para evitar datos incorrectos, el equipo verificará material, talla, puente y variantes durante la asesoría.</p></div>
+            <Glasses /><div><h3>Datos por confirmar en sucursal</h3><p>Esta referencia visual proviene del inventario real del negocio, pero la fotografía no permite verificar marca, código ni medidas. El equipo confirmará esos datos durante la asesoría.</p></div>
           </div>
         )}
       </section>

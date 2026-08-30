@@ -14,9 +14,10 @@ export default function Home() {
         <div><p>Una selección rápida de las colecciones registradas. Los modelos, colores y existencias se confirman directamente en la sucursal antes de tu visita.</p><div className="catalog-brand-list">{BRANDS.map((brand) => <Link href={`/catalogo/${brand.id}`} key={brand.id}>{brand.name}</Link>)}</div></div>
       </div>
       <div className="home-product-groups">
+        <ProductGrid brand="Ralph Lauren" brandId="ralph-lauren" products={COLLECTIONS["ralph-lauren"].slice(0, 3)} compact />
         <ProductGrid brand="Ray-Ban" brandId="ray-ban" products={COLLECTIONS["ray-ban"].slice(0, 3)} compact />
         <ProductGrid brand="Guess" brandId="guess" products={COLLECTIONS.guess.slice(0, 3)} compact />
-        <ProductGrid brand="Vogue Eyewear" brandId="vogue" products={COLLECTIONS.vogue.slice(0, 3)} compact />
+        <ProductGrid brand="Carolina Herrera" brandId="carolina-herrera" products={COLLECTIONS["carolina-herrera"].slice(0, 3)} compact />
       </div>
       <div className="catalog-actions"><Button asChild variant="dark"><Link href="/catalogo">Ver catálogo completo</Link></Button><p>La prueba presencial permite evaluar proporciones, puente, ajuste y comodidad.</p></div>
     </section>

@@ -13,14 +13,51 @@ export const NAV = [
 export const whatsapp = (message = "Hola, quiero información de Sunglass Shop Óptica.") =>
   `https://wa.me/${CONTACT.phoneDigits}?text=${encodeURIComponent(message)}`;
 
-export const BRANDS = [
-  { id: "ray-ban", name: "Ray-Ban", logo: "/assets/logos/RayBan blanco.png", logoDark: "/assets/logos/RayBan Negro.png", media: "/assets/catalogo/RayBan/RayBan11.jpeg" },
-  { id: "prada", name: "Prada", logo: "/assets/logos/Prada Blanco.png", logoDark: "/assets/logos/Prada negro.png", media: null },
-  { id: "carolina-herrera", name: "Carolina Herrera", logo: "/assets/logos/Carolina-Herrera-Logo-PNG.png", logoDark: "/assets/logos/Carolina-Herrera-Logo-PNG.png", media: null },
-  { id: "guess", name: "Guess", logo: "/assets/logos/Guess Blanco.png", logoDark: "/assets/logos/Guess negro.png", media: "/assets/catalogo/Guess/Guess11.jpeg" },
-  { id: "vogue", name: "Vogue Eyewear", logo: "/assets/logos/Vogue eyewear blanco.png", logoDark: "/assets/logos/Vogue eyewear negro.png", media: null },
-  { id: "oakley", name: "Oakley", logo: "/assets/logos/Oakley Blanco.svg", logoDark: "/assets/logos/Oakley Negro.svg", media: null },
-] as const;
+export type Brand = {
+  id: string;
+  name: string;
+  logo: string | null;
+  logoDark: string | null;
+  media: string;
+};
+
+export const BRANDS: Brand[] = [
+  {
+    id: "ralph-lauren",
+    name: "Ralph Lauren",
+    logo: null,
+    logoDark: null,
+    media: "/assets/local-inventory/ralph-lauren/geometrico-dorado/1.webp",
+  },
+  {
+    id: "ray-ban",
+    name: "Ray-Ban",
+    logo: "/assets/logos/RayBan blanco.png",
+    logoDark: "/assets/logos/RayBan Negro.png",
+    media: "/assets/local-inventory/ray-ban/rectangular-carey/1.webp",
+  },
+  {
+    id: "carolina-herrera",
+    name: "Carolina Herrera",
+    logo: "/assets/logos/Carolina-Herrera-Logo-PNG.png",
+    logoDark: "/assets/logos/Carolina-Herrera-Logo-PNG.png",
+    media: "/assets/local-inventory/carolina-herrera/cat-eye-borgona/1.webp",
+  },
+  {
+    id: "guess",
+    name: "Guess",
+    logo: "/assets/logos/Guess Blanco.png",
+    logoDark: "/assets/logos/Guess negro.png",
+    media: "/assets/local-inventory/guess/redondo-rojo/2.webp",
+  },
+  {
+    id: "otros",
+    name: "Otros del local",
+    logo: null,
+    logoDark: null,
+    media: "/assets/local-inventory/otros/vitrina-multimarca-02/1.webp",
+  },
+];
 
 export type ProductMedia = {
   src: string;
@@ -30,15 +67,15 @@ export type ProductMedia = {
 };
 
 export type ProductSpecs = {
-  shape: string;
-  material: string;
-  lensWidth: string;
-  bridgeWidth: string;
-  templeLength: string;
-  lensHeight: string;
-  fit: string;
-  bridgeFit: string;
-  clipOn: string;
+  shape?: string;
+  material?: string;
+  lensWidth?: string;
+  bridgeWidth?: string;
+  templeLength?: string;
+  lensHeight?: string;
+  fit?: string;
+  bridgeFit?: string;
+  clipOn?: string;
 };
 
 export type Product = {
@@ -55,96 +92,118 @@ export type Product = {
   officialSource?: string;
 };
 
-const productShot = (
-  product: Omit<Product, "src" | "gallery" | "spriteIndex"> & { asset: string },
-): Product => {
-  const { asset, ...details } = product;
-  const viewNames = ["vista frontal", "vista de tres cuartos", "vista lateral"];
-  return {
-    ...details,
-    src: asset,
-    spriteIndex: 1,
-    gallery: viewNames.map((view, index) => ({
-      src: asset,
-      alt: `${product.name}, ${view}`,
-      spriteIndex: index as 0 | 1 | 2,
-    })),
-  };
+type LocalProductInput = Omit<Product, "src" | "gallery"> & {
+  folder: string;
+  views?: string[];
+};
+
+const localProduct = ({ folder, views = ["vista frontal", "vista de tres cuartos", "vista lateral"], ...product }: LocalProductInput): Product => {
+  const gallery = views.map((view, index) => ({
+    src: `/assets/local-inventory/${folder}/${index + 1}.webp`,
+    alt: `${product.name}, ${view}, fotografía real de la sucursal`,
+  }));
+
+  return { ...product, src: gallery[0].src, gallery };
 };
 
 export const COLLECTIONS: Record<string, Product[]> = {
+  "ralph-lauren": [
+    localProduct({
+      folder: "ralph-lauren/geometrico-dorado",
+      slug: "geometrico-dorado-local-01",
+      name: "Geométrico dorado",
+      detail: "Armazón óptico de contorno geométrico fino, fotografiado directamente en Sunglass Shop.",
+      color: "Dorado con terminales carey",
+      specs: { shape: "Geométrica", material: "Metal", bridgeFit: "Almohadillas nasales ajustables" },
+    }),
+    localProduct({
+      folder: "ralph-lauren/rectangular-carey",
+      slug: "rectangular-carey-local-02",
+      name: "Rectangular carey",
+      detail: "Frente rectangular de líneas suaves con acabado carey y varillas oscuras.",
+      color: "Carey oscuro",
+      specs: { shape: "Rectangular" },
+    }),
+    localProduct({
+      folder: "ralph-lauren/rectangular-nude",
+      slug: "rectangular-nude-local-03",
+      name: "Rectangular nude",
+      detail: "Armazón óptico translúcido de perfil rectangular y acabado cálido.",
+      color: "Nude translúcido",
+      specs: { shape: "Rectangular" },
+    }),
+  ],
   "ray-ban": [
-    productShot({
-      asset: "/assets/generated-eyewear/aviator-triptych.webp",
-      slug: "aviator-classic-rb3025",
-      name: "Aviator Classic",
-      detail: "La silueta piloto original de Ray-Ban, con doble puente y almohadillas ajustables.",
-      code: "RB3025 L0205 58-14",
-      color: "Oro arista · Verde G-15",
-      specs: { shape: "Piloto", material: "Metal", lensWidth: "58 mm", bridgeWidth: "14 mm", templeLength: "135 mm", lensHeight: "50.1 mm", fit: "Estándar", bridgeFit: "Almohadillas nasales ajustables", clipOn: "No" },
-      officialSource: "https://www.ray-ban.com/mexico/gafas-de-sol/0RB3025-AVIATOR%20CLASSIC-Oro%20arista/805289602057",
+    localProduct({
+      folder: "ray-ban/cuadrado-transparente",
+      slug: "cuadrado-transparente-local-01",
+      name: "Cuadrado transparente",
+      detail: "Armazón óptico transparente de frente amplio, registrado desde distintos ángulos en la sucursal.",
+      color: "Cristal con varillas negras",
+      specs: { shape: "Cuadrada" },
     }),
-    productShot({
-      asset: "/assets/generated-eyewear/wayfarer-triptych.webp",
-      slug: "original-wayfarer-classic-rb2140",
-      name: "Original Wayfarer Classic",
-      detail: "Diseño cuadrado de acetato, reconocido por su perfil inclinado y presencia atemporal.",
-      code: "RB2140 901 50-22",
-      color: "Negro pulido · Verde G-15",
-      specs: { shape: "Cuadrada", material: "Acetato", lensWidth: "50 mm", bridgeWidth: "22 mm", templeLength: "150 mm", lensHeight: "41 mm", fit: "Estándar", bridgeFit: "Ajuste de puente alto", clipOn: "No" },
-      officialSource: "https://www.ray-ban.com/mexico/gafas-de-sol/0RB2140-WAYFARER-Negro/805289126577",
-    }),
-    productShot({
-      asset: "/assets/generated-eyewear/clubmaster-triptych.webp",
-      slug: "clubmaster-classic-rb3016",
-      name: "Clubmaster Classic",
-      detail: "Estética browline de inspiración retro con puente metálico y ajuste nasal regulable.",
-      code: "RB3016 901/58 51-21",
-      color: "Negro y dorado · G-15 verde polarizado",
-      specs: { shape: "Cuadrada", material: "Acetato", lensWidth: "51 mm", bridgeWidth: "21 mm", templeLength: "145 mm", lensHeight: "43.9 mm", fit: "Estándar", bridgeFit: "Almohadillas nasales ajustables", clipOn: "No" },
-      officialSource: "https://www.ray-ban.com/mexico/gafas-de-sol/RB3016clubmaster%20classic-negro%20y%20dorado/805289346883",
-    }),
-    productShot({
-      asset: "/assets/generated-eyewear/round-triptych.webp",
-      slug: "round-metal-rb3447",
-      name: "Round Metal",
-      detail: "Armazón metálico redondo, ligero y con almohadillas nasales ajustables.",
-      code: "RB3447 919671 50-21",
-      color: "Dorado pulido · Gris degradé",
-      specs: { shape: "Redonda", material: "Metal", lensWidth: "50 mm", bridgeWidth: "21 mm", templeLength: "145 mm", lensHeight: "46.9 mm", fit: "Pequeño", bridgeFit: "Almohadillas nasales ajustables", clipOn: "No" },
-      officialSource: "https://www.ray-ban.com/mexico/gafas-de-sol/RB3447%20MALE%20round%20metal%20online%20exclusive-dorado/8056597409162",
-    }),
-    productShot({
-      asset: "/assets/generated-eyewear/justin-triptych.webp",
-      slug: "justin-classic-rb4165",
-      name: "Justin Classic",
-      detail: "Perfil cuadrado de inspiración urbana con estructura ligera y ajuste de puente alto.",
-      code: "RB4165 687380 54-16",
-      color: "Gris ópalo mate · Azul oscuro",
-      specs: { shape: "Cuadrada", material: "Nailon", lensWidth: "54 mm", bridgeWidth: "16 mm", templeLength: "145 mm", lensHeight: "43.9 mm", fit: "Estándar", bridgeFit: "Ajuste de puente alto", clipOn: "No" },
-      officialSource: "https://www.ray-ban.com/mexico/gafas-de-sol/RB4165justin%20classic-gris%20%C3%B3palo/8056262898789",
-    }),
-    productShot({
-      asset: "/assets/generated-eyewear/hexagonal-triptych.webp",
-      slug: "hexagonal-flat-lenses-rb3548n",
-      name: "Hexagonal Flat Lenses",
-      detail: "Geometría irregular de metal con micas planas y almohadillas ajustables.",
-      code: "RB3548N 001 51-21",
-      color: "Oro arista · Verde G-15",
-      specs: { shape: "Irregular", material: "Metal", lensWidth: "51 mm", bridgeWidth: "21 mm", templeLength: "145 mm", lensHeight: "44.7 mm", fit: "Estándar", bridgeFit: "Almohadillas nasales ajustables", clipOn: "No" },
-      officialSource: "https://www.ray-ban.com/mexico/gafas-de-sol/RB3548Nhexagonal%20flat%20lenses-oro%20arista/8053672611649",
+    localProduct({
+      folder: "ray-ban/rectangular-carey",
+      slug: "rectangular-carey-local-02",
+      name: "Rectangular carey",
+      detail: "Armazón óptico Ray-Ban de líneas rectangulares y acabado carey oscuro.",
+      color: "Carey oscuro",
+      specs: { shape: "Rectangular" },
     }),
   ],
-  guess: [
-    productShot({ asset: "/assets/generated-eyewear/cat-eye-triptych.webp", slug: "cat-eye-guess", name: "Cat-Eye Guess", detail: "Silueta cat-eye de presencia gráfica." }),
-    productShot({ asset: "/assets/generated-eyewear/red-optical-triptych.webp", slug: "optico-rojo-guess", name: "Óptico rojo Guess", detail: "Armazón oftálmico rojo con varillas metálicas." }),
-    productShot({ asset: "/assets/generated-eyewear/tortoise-square-triptych.webp", slug: "square-guess", name: "Square Guess", detail: "Frente cuadrado pensado para una presencia definida." }),
-    productShot({ asset: "/assets/generated-eyewear/tortoise-optical-triptych.webp", slug: "carey-guess", name: "Carey Guess", detail: "Armazón óptico en acabado carey." }),
+  "carolina-herrera": [
+    localProduct({
+      folder: "carolina-herrera/cat-eye-borgona",
+      slug: "cat-eye-borgona-local-01",
+      name: "Selección cat-eye borgoña",
+      detail: "Selección metálica cat-eye en tonos borgoña y oro, fotografiada en el exhibidor de Carolina Herrera.",
+      color: "Borgoña y dorado",
+      specs: { shape: "Cat-eye", material: "Metal", bridgeFit: "Almohadillas nasales ajustables" },
+    }),
   ],
-  vogue: [
-    productShot({ asset: "/assets/generated-eyewear/pink-cat-eye-triptych.webp", slug: "vogue-cat-eye", name: "Vogue Cat-Eye", detail: "Una selección de siluetas cat-eye de la colección Vogue Eyewear." }),
-    productShot({ asset: "/assets/generated-eyewear/classic-brown-triptych.webp", slug: "vogue-classic", name: "Vogue Classic", detail: "Diseños versátiles para uso diario." }),
-    productShot({ asset: "/assets/generated-eyewear/glamour-burgundy-triptych.webp", slug: "vogue-glamour", name: "Vogue Glamour", detail: "Siluetas expresivas de inspiración editorial." }),
+  "guess": [
+    localProduct({
+      folder: "guess/redondo-rojo",
+      slug: "redondo-rojo-local-01",
+      name: "Redondo rojo",
+      detail: "Armazón óptico redondo con frente rojo y detalles metálicos claros.",
+      color: "Rojo con dorado",
+      specs: { shape: "Redonda" },
+    }),
+    localProduct({
+      folder: "guess/carey-ovalado",
+      slug: "carey-ovalado-local-02",
+      name: "Carey ovalado",
+      detail: "Armazón óptico de contorno ovalado suave en acabado carey oscuro.",
+      color: "Carey oscuro",
+      specs: { shape: "Ovalada" },
+    }),
+    localProduct({
+      folder: "guess/rectangular-carey",
+      slug: "rectangular-carey-local-03",
+      name: "Rectangular carey",
+      detail: "Armazón óptico rectangular de perfil compacto y acabado carey cálido.",
+      color: "Carey cálido",
+      specs: { shape: "Rectangular" },
+    }),
+  ],
+  "otros": [
+    localProduct({
+      folder: "otros/vitrina-multimarca-01",
+      slug: "vitrina-multimarca-01",
+      name: "Vitrina multimarca 01",
+      detail: "Selección real del local con referencias cuya marca o modelo no se distingue con suficiente certeza en cada toma.",
+      color: "Colores variados",
+      views: ["vista general", "vista lateral", "vista ampliada"],
+    }),
+    localProduct({
+      folder: "otros/vitrina-multimarca-02",
+      slug: "vitrina-multimarca-02",
+      name: "Vitrina multimarca 02",
+      detail: "Exhibición de armazones del inventario físico, agrupada aparte para no asignar marcas incorrectas.",
+      color: "Colores variados",
+      views: ["vista general", "vista superior", "vista ampliada"],
+    }),
   ],
 };
 

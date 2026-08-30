@@ -42,13 +42,13 @@ export function ProductGrid({
           <div className="product-information">
             <div className="product-heading">
               <div>
-                <span>{item.code ? "Modelo" : "Selección"}</span>
+                <span>{item.code ? "Modelo" : "Referencia visual"}</span>
                 <h3>{item.name}</h3>
               </div>
               <ArrowRight aria-hidden="true" />
             </div>
             <dl className="product-availability">
-              <div><dt>Referencia</dt><dd>{item.code ?? "Confirmar en sucursal"}</dd></div>
+              <div><dt>Disponibilidad</dt><dd>{item.code ?? "Confirmar en sucursal"}</dd></div>
               <div><dt>Acabado</dt><dd>{item.color ?? "Variantes según inventario"}</dd></div>
             </dl>
             <p className="product-card-summary">{item.detail}</p>

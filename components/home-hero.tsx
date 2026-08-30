@@ -40,7 +40,7 @@ export function HomeHero() {
       <span className="brand-rail-label">Marcas disponibles</span>
       <div className="brand-marquee-viewport">
         <div className="brand-marquee-track">
-          {[0, 1].map((copy) => <div className="brand-marquee-group" aria-hidden={copy === 1} key={copy}>{BRANDS.map((brand) => <Link key={`${copy}-${brand.id}`} tabIndex={copy === 1 ? -1 : 0} href={`/catalogo/${brand.id}`} aria-label={copy === 0 ? `Ver catálogo ${brand.name}` : undefined}><img src={brand.logo} alt={copy === 0 ? brand.name : ""}/></Link>)}</div>)}
+          {[0, 1].map((copy) => <div className="brand-marquee-group" aria-hidden={copy === 1} key={copy}>{BRANDS.map((brand) => <Link key={`${copy}-${brand.id}`} tabIndex={copy === 1 ? -1 : 0} href={`/catalogo/${brand.id}`} aria-label={copy === 0 ? `Ver catálogo ${brand.name}` : undefined}>{brand.logo ? <img src={brand.logo} alt={copy === 0 ? brand.name : ""}/> : <span className="brand-name-mark">{brand.name}</span>}</Link>)}</div>)}
         </div>
       </div>
     </div>

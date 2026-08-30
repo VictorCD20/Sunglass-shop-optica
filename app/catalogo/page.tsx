@@ -17,8 +17,8 @@ export default function Catalogo() {
         eyebrow="Catálogo sin precios en línea"
         title="Elige una marca"
         text="Revisa modelos, medidas y materiales. La elección final se realiza en sucursal para comprobar proporción, puente y comodidad."
-        media="/assets/catalogo/RayBan/RayBan11.jpeg"
-        position="center 18%"
+        media="/assets/local-inventory/ray-ban/rectangular-carey/1.webp"
+        position="center"
       >
         <Button asChild><a href="#marcas">Explorar marcas</a></Button>
         <Button asChild variant="outline"><a href={whatsapp("Hola, quiero agendar una asesoría para elegir mis lentes.")} target="_blank" rel="noreferrer">Agendar asesoría</a></Button>
@@ -41,7 +41,7 @@ export default function Catalogo() {
               <Link href={`/catalogo/${brand.id}`} className={`brand-catalog-card ${brand.media ? "" : "brand-catalog-card--logo"}`} key={brand.id}>
                 {brand.media ? <img className="brand-catalog-photo" src={brand.media} alt={`Colección ${brand.name}`} /> : null}
                 <span className="brand-catalog-overlay" aria-hidden="true" />
-                <img className="brand-catalog-logo" src={brand.logo} alt={brand.name} />
+                {brand.logo ? <img className="brand-catalog-logo" src={brand.logo} alt={brand.name} /> : <span className="brand-catalog-name">{brand.name}</span>}
                 <div>
                   <span>{count ? `${count} referencias para explorar` : "Consultar modelos en sucursal"}</span>
                   <strong>Ver colección <ArrowRight /></strong>

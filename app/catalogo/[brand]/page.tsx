@@ -29,8 +29,8 @@ export default async function BrandCatalog({ params }: { params: Promise<{ brand
         eyebrow="Catálogo por marca"
         title={brand.name}
         text={products.length ? "Explora cada referencia y abre su ficha para revisar vistas, materiales y medidas. La disponibilidad final se confirma en sucursal." : "Esta marca forma parte de la oferta de la óptica. El equipo confirma directamente los modelos y colores disponibles."}
-        media={brand.media ?? brand.logo}
-        position="center 20%"
+        media={brand.media}
+        position="center"
       >
         {products.length ? <Button asChild><a href="#modelos">Ver modelos</a></Button> : null}
         <Button asChild variant="outline"><a href={whatsapp(`Hola, quiero conocer los modelos ${brand.name} disponibles y agendar una visita.`)} target="_blank" rel="noreferrer">Consultar por WhatsApp</a></Button>
@@ -52,7 +52,7 @@ export default async function BrandCatalog({ params }: { params: Promise<{ brand
           </>
         ) : (
           <div className="empty-brand-state">
-            <img src={brand.logoDark} alt={brand.name} />
+            {brand.logoDark ? <img src={brand.logoDark} alt={brand.name} /> : <strong className="brand-name-mark brand-name-mark--dark">{brand.name}</strong>}
             <span className="eyebrow">Inventario en sucursal</span>
             <h2>Consulta la selección actual de {brand.name}</h2>
             <p>No publicamos modelos que no estén confirmados. Escríbenos para recibir las referencias disponibles y agendar una prueba.</p>
