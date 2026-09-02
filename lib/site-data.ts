@@ -19,6 +19,7 @@ export type Brand = {
   logo: string | null;
   logoDark: string | null;
   media: string;
+  bannerMedia?: string;
 };
 
 export const BRANDS: Brand[] = [
@@ -28,6 +29,7 @@ export const BRANDS: Brand[] = [
     logo: null,
     logoDark: null,
     media: "/assets/local-inventory/ralph-lauren/geometrico-dorado/1.webp",
+    bannerMedia: "/assets/catalogo/RayBan/RayBan7.jpeg",
   },
   {
     id: "ray-ban",
@@ -35,6 +37,7 @@ export const BRANDS: Brand[] = [
     logo: "/assets/logos/RayBan blanco.png",
     logoDark: "/assets/logos/RayBan Negro.png",
     media: "/assets/local-inventory/ray-ban/rectangular-carey/1.webp",
+    bannerMedia: "/assets/catalogo/RayBan/RayBan10.jpeg",
   },
   {
     id: "carolina-herrera",
@@ -42,13 +45,15 @@ export const BRANDS: Brand[] = [
     logo: "/assets/logos/Carolina-Herrera-Logo-PNG.png",
     logoDark: "/assets/logos/Carolina-Herrera-Logo-PNG.png",
     media: "/assets/local-inventory/carolina-herrera/cat-eye-borgona/1.webp",
+    bannerMedia: "/assets/catalogo/RayBan/RayBan2.jpeg",
   },
   {
     id: "guess",
     name: "Guess",
     logo: "/assets/logos/Guess Blanco.png",
     logoDark: "/assets/logos/Guess negro.png",
-    media: "/assets/local-inventory/guess/redondo-rojo/2.webp",
+    media: "/assets/local-inventory/guess/redondo-rojo/1.webp",
+    bannerMedia: "/assets/catalogo/Guess/Guess11.jpeg",
   },
   {
     id: "otros",
@@ -56,6 +61,7 @@ export const BRANDS: Brand[] = [
     logo: null,
     logoDark: null,
     media: "/assets/local-inventory/otros/vitrina-multimarca-02/1.webp",
+    bannerMedia: "/assets/catalogo/Guess/Guess4.jpeg",
   },
 ];
 
@@ -115,6 +121,7 @@ export const COLLECTIONS: Record<string, Product[]> = {
       detail: "Armazón óptico de contorno geométrico fino, fotografiado directamente en Sunglass Shop.",
       color: "Dorado con terminales carey",
       specs: { shape: "Geométrica", material: "Metal", bridgeFit: "Almohadillas nasales ajustables" },
+      views: ["vista de tres cuartos", "vista frontal", "vista lateral", "vista superior"],
     }),
     localProduct({
       folder: "ralph-lauren/rectangular-carey",
@@ -123,6 +130,7 @@ export const COLLECTIONS: Record<string, Product[]> = {
       detail: "Frente rectangular de líneas suaves con acabado carey y varillas oscuras.",
       color: "Carey oscuro",
       specs: { shape: "Rectangular" },
+      views: ["vista de tres cuartos", "vista frontal", "vista lateral", "vista superior"],
     }),
     localProduct({
       folder: "ralph-lauren/rectangular-nude",
@@ -131,6 +139,7 @@ export const COLLECTIONS: Record<string, Product[]> = {
       detail: "Armazón óptico translúcido de perfil rectangular y acabado cálido.",
       color: "Nude translúcido",
       specs: { shape: "Rectangular" },
+      views: ["vista de tres cuartos", "vista frontal", "vista lateral", "vista superior"],
     }),
   ],
   "ray-ban": [
@@ -141,6 +150,7 @@ export const COLLECTIONS: Record<string, Product[]> = {
       detail: "Armazón óptico transparente de frente amplio, registrado desde distintos ángulos en la sucursal.",
       color: "Cristal con varillas negras",
       specs: { shape: "Cuadrada" },
+      views: ["vista de tres cuartos", "vista frontal", "vista lateral", "vista superior"],
     }),
     localProduct({
       folder: "ray-ban/rectangular-carey",
@@ -149,6 +159,7 @@ export const COLLECTIONS: Record<string, Product[]> = {
       detail: "Armazón óptico Ray-Ban de líneas rectangulares y acabado carey oscuro.",
       color: "Carey oscuro",
       specs: { shape: "Rectangular" },
+      views: ["vista de tres cuartos", "vista frontal", "vista lateral", "vista superior"],
     }),
   ],
   "carolina-herrera": [
@@ -159,6 +170,7 @@ export const COLLECTIONS: Record<string, Product[]> = {
       detail: "Selección metálica cat-eye en tonos borgoña y oro, fotografiada en el exhibidor de Carolina Herrera.",
       color: "Borgoña y dorado",
       specs: { shape: "Cat-eye", material: "Metal", bridgeFit: "Almohadillas nasales ajustables" },
+      views: ["vista de tres cuartos", "vista frontal", "vista lateral", "vista superior"],
     }),
   ],
   "guess": [
@@ -169,6 +181,7 @@ export const COLLECTIONS: Record<string, Product[]> = {
       detail: "Armazón óptico redondo con frente rojo y detalles metálicos claros.",
       color: "Rojo con dorado",
       specs: { shape: "Redonda" },
+      views: ["vista de tres cuartos", "vista frontal", "vista lateral", "vista de detalle"],
     }),
     localProduct({
       folder: "guess/carey-ovalado",
@@ -177,6 +190,7 @@ export const COLLECTIONS: Record<string, Product[]> = {
       detail: "Armazón óptico de contorno ovalado suave en acabado carey oscuro.",
       color: "Carey oscuro",
       specs: { shape: "Ovalada" },
+      views: ["vista de tres cuartos", "vista frontal", "vista lateral", "vista superior"],
     }),
     localProduct({
       folder: "guess/rectangular-carey",
@@ -185,6 +199,7 @@ export const COLLECTIONS: Record<string, Product[]> = {
       detail: "Armazón óptico rectangular de perfil compacto y acabado carey cálido.",
       color: "Carey cálido",
       specs: { shape: "Rectangular" },
+      views: ["vista de tres cuartos", "vista frontal", "vista lateral", "vista superior"],
     }),
   ],
   "otros": [

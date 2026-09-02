@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
+import { HeroCarousel, type HeroCarouselSlide } from "@/components/hero-carousel";
 import { Button } from "@/components/ui/button";
 import { BRANDS, COLLECTIONS, whatsapp } from "@/lib/site-data";
 
@@ -11,14 +12,26 @@ export const metadata: Metadata = {
 };
 
 export default function Catalogo() {
+  // Recopila automáticamente la primera vista de cada producto de todas las marcas.
+  // Si se agregan más lentes en el futuro, aparecerán aquí sin cambios manuales.
+  const slides: HeroCarouselSlide[] = BRANDS.flatMap((brand) =>
+    (COLLECTIONS[brand.id] ?? []).map((product) => ({
+      src: product.gallery[0]?.src ?? product.src,
+      alt: product.gallery[0]?.alt ?? product.name,
+      brand: brand.name,
+      name: product.name,
+    })),
+  );
+
   return (
     <main>
       <PageHero
         eyebrow="Catálogo sin precios en línea"
         title="Elige una marca"
         text="Revisa modelos, medidas y materiales. La elección final se realiza en sucursal para comprobar proporción, puente y comodidad."
-        media="/assets/local-inventory/ray-ban/rectangular-carey/1.webp"
-        position="center"
+        media="/assets/catalogo/RayBan/RayBan11.jpeg"
+        position="center 24%"
+        carousel={<HeroCarousel slides={slides} />}
       >
         <Button asChild><a href="#marcas">Explorar marcas</a></Button>
         <Button asChild variant="outline"><a href={whatsapp("Hola, quiero agendar una asesoría para elegir mis lentes.")} target="_blank" rel="noreferrer">Agendar asesoría</a></Button>

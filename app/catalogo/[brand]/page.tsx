@@ -29,8 +29,8 @@ export default async function BrandCatalog({ params }: { params: Promise<{ brand
         eyebrow="Catálogo por marca"
         title={brand.name}
         text={products.length ? "Explora cada referencia y abre su ficha para revisar vistas, materiales y medidas. La disponibilidad final se confirma en sucursal." : "Esta marca forma parte de la oferta de la óptica. El equipo confirma directamente los modelos y colores disponibles."}
-        media={brand.media}
-        position="center"
+        media={brand.bannerMedia || brand.media}
+        position="center 24%"
       >
         {products.length ? <Button asChild><a href="#modelos">Ver modelos</a></Button> : null}
         <Button asChild variant="outline"><a href={whatsapp(`Hola, quiero conocer los modelos ${brand.name} disponibles y agendar una visita.`)} target="_blank" rel="noreferrer">Consultar por WhatsApp</a></Button>
