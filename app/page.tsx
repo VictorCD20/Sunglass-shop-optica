@@ -27,6 +27,10 @@ export default function Home() {
         <article><Eye/><span>01</span><h3>Optometría integral</h3><p>Evaluación visual profesional y asesoría para definir la graduación y el tipo de lente adecuado.</p></article>
         <article><Wrench/><span>02</span><h3>Reparación de lentes</h3><p>Ajuste, mantenimiento, reparación y sustitución de piezas, sujetos al modelo y disponibilidad.</p></article>
       </div>
+      <div className="face-promo">
+        <div><span className="eyebrow gold">Nueva guía</span><h2>¿Qué armazón va con tu rostro?</h2><p>Identifica tu tipo de rostro y descubre los diseños que te favorecen antes de tu visita.</p></div>
+        <Button asChild variant="dark"><Link href="/asesoria">Ver guía de rostros</Link></Button>
+      </div>
       <div className="sports-service">
         <div className="sports-service-media"><video src="/assets/catalogo/RayBan/RayBanVid4.mp4" autoPlay muted loop playsInline preload="metadata" /></div>
         <div className="sports-service-copy"><span className="eyebrow gold">Servicio especializado</span><div className="sports-icon"><Bike/><Sparkles/></div><h2>Fabricación de lentes deportivas graduadas</h2><p>Soluciones para quienes necesitan visión clara durante la actividad deportiva, incluso en diseños envolventes.</p><ul><li><Glasses/>Graduación de micas curvas</li><li><Sun/>Acabados espejeados</li><li><Sparkles/>Tecnología fotocromática que se oscurece con el sol</li></ul><Button asChild><a href={whatsapp("Hola, quiero información sobre lentes deportivas graduadas.")} target="_blank">Consultar este servicio</a></Button></div>
