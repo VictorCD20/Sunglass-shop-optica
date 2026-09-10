@@ -23,11 +23,10 @@ export function HomeHero() {
     <div className="hero-slides" aria-live="polite">{slides.map((slide, slideIndex) => <div key={slide.src} className={`hero-slide ${slideIndex === index ? "active" : ""}`} aria-hidden={slideIndex !== index}>{slide.type === "video" ? <video className="hero-slide-visual" src={slide.src} autoPlay muted loop playsInline preload="metadata" /> : <><div className="hero-slide-backdrop" style={{ backgroundImage: `url('${slide.src}')` }} /><img className="hero-slide-visual" src={slide.src} alt="" style={{ objectPosition: slide.position }} /></>}<span className="sr-only">{slide.label}</span></div>)}</div>
     <div className="hero-shade" />
     <div className="home-hero-copy">
-      <span className="eyebrow gold">Regreso a clases · Mérida</span>
-      <h1>El lente correcto<br/><em>se elige en persona.</em></h1>
-      <p>Explora modelos disponibles y visita la sucursal para encontrar el armazón que mejor funciona con las proporciones de tu rostro.</p>
-      <div className="hero-actions"><Button asChild><a href="#catalogo-inicio">Ver modelos disponibles</a></Button><Button asChild variant="outline"><Link href="/contacto">Visitar la óptica</Link></Button></div>
-      <div className="trust-row"><span>Más de 11 años</span><span>Prueba presencial</span><span>Asesoría por tipo de rostro</span><span>Marcas originales</span></div>
+      <h1>SUNGLASS SHOP ÓPTICA<br/><em>Visión, estilo y atención personalizada.</em></h1>
+      <p>Visita nuestra óptica en Mérida para recibir orientación en la elección de tus armazones y taller de servicio.</p>
+      <div className="hero-actions"><Button asChild><a href="#catalogo-inicio">Ver modelos</a></Button><Button asChild variant="outline"><Link href="/servicios">Conocer servicios</Link></Button></div>
+      <div className="trust-row"><span>Óptica en Plaza Dorada</span><span>Prueba presencial</span><span>Asesoría por tipo de rostro</span><span>Marcas reconocidas</span></div>
     </div>
     <div className="hero-controls" aria-label="Controles del hero">
       <button type="button" onClick={previous} aria-label="Imagen anterior"><ChevronLeft /></button>

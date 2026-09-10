@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ProductGallery } from "@/components/product-gallery";
 import { Button } from "@/components/ui/button";
 import { BRANDS, COLLECTIONS, getBrand, getProduct, whatsapp } from "@/lib/site-data";
+import { TrackedWhatsappLink } from "@/components/tracked-whatsapp-link";
 
 export function generateStaticParams() {
   return BRANDS.flatMap((brand) => (COLLECTIONS[brand.id] ?? []).map((product) => ({ brand: brand.id, product: product.slug })));
@@ -14,7 +15,15 @@ export async function generateMetadata({ params }: { params: Promise<{ brand: st
   const { brand: brandId, product: productSlug } = await params;
   const brand = getBrand(brandId);
   const product = getProduct(brandId, productSlug);
-  return brand && product ? { title: `${product.name} · ${brand.name}`, description: product.detail } : {};
+  return brand && product
+    ? {
+        title: `${product.name} · ${brand.name} | Sunglass Shop Mérida`,
+        description: product.detail,
+        alternates: {
+          canonical: `/catalogo/${brand.id}/${product.slug}`,
+        },
+      }
+    : {};
 }
 
 export default async function ProductDetail({ params }: { params: Promise<{ brand: string; product: string }> }) {
@@ -51,7 +60,16 @@ export default async function ProductDetail({ params }: { params: Promise<{ bran
             <p className="product-description">{product.detail}</p>
             {product.color ? <div className="product-color"><span>Acabado de referencia</span><strong>{product.color}</strong></div> : null}
             <div className="no-price-note"><BadgeCheck /><div><strong>Sin precio en línea</strong><span>Confirma disponibilidad y recibe asesoría presencial.</span></div></div>
-            <Button asChild variant="dark"><a href={whatsapp(message)} target="_blank" rel="noreferrer"><MessageCircle /> Agendar prueba por WhatsApp</a></Button>
+            <Button asChild variant="dark">
+              <TrackedWhatsappLink
+                href={whatsapp(message)}
+                eventName="click_whatsapp_catalogo"
+                eventCategory="lead"
+                eventLabel="whatsapp_catalogo"
+              >
+                <MessageCircle /> Agendar prueba por WhatsApp
+              </TrackedWhatsappLink>
+            </Button>
             <div className="visit-note"><MapPin /><span>Plaza Dorada · Local 64 · Mérida</span></div>
           </aside>
         </div>
@@ -82,7 +100,16 @@ export default async function ProductDetail({ params }: { params: Promise<{ bran
 
       <section className="product-appointment">
         <div><span className="eyebrow gold">El siguiente paso</span><h2>Comprueba cómo se siente en tu rostro.</h2><p>Agenda una visita para recibir orientación visual, comparar proporciones y revisar la disponibilidad real del modelo.</p></div>
-        <Button asChild><a href={whatsapp(message)} target="_blank" rel="noreferrer">Agendar cita <MessageCircle /></a></Button>
+        <Button asChild>
+          <TrackedWhatsappLink
+            href={whatsapp(message)}
+            eventName="click_whatsapp_catalogo"
+            eventCategory="lead"
+            eventLabel="whatsapp_catalogo"
+          >
+            Agendar cita <MessageCircle />
+          </TrackedWhatsappLink>
+        </Button>
       </section>
     </main>
   );

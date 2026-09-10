@@ -7,11 +7,21 @@ export const CONTACT = {
 
 export const NAV = [
   ["Inicio", "/"], ["Catálogo", "/catalogo"], ["Servicios", "/servicios"],
-  ["Beneficios", "/beneficios"], ["Convenios", "/convenios"], ["Contacto", "/contacto"],
+  ["Beneficios", "/beneficios"], ["Contacto", "/contacto"],
 ] as const;
 
-export const whatsapp = (message = "Hola, quiero información de Sunglass Shop Óptica.") =>
+export const WHATSAPP_MESSAGES = {
+  general: "Hola, vi su sitio web y quiero recibir asesoría para elegir mis lentes.",
+  catalogo: "Hola, vi el catálogo en su sitio web y quiero consultar disponibilidad de un modelo.",
+  asesoria: "Hola, quiero agendar una asesoría para elegir lentes según mi rostro y necesidades.",
+  deportivo: "Hola, quiero información sobre lentes deportivos graduados.",
+  reparacion: "Hola, quiero consultar si pueden reparar o ajustar mis lentes.",
+  convenios: "Hola, quiero información sobre convenios ópticos para empresas o colaboradores.",
+} as const;
+
+export const whatsapp = (message: string = WHATSAPP_MESSAGES.general) =>
   `https://wa.me/${CONTACT.phoneDigits}?text=${encodeURIComponent(message)}`;
+
 
 export type Brand = {
   id: string;
@@ -24,20 +34,36 @@ export type Brand = {
 
 export const BRANDS: Brand[] = [
   {
-    id: "ralph-lauren",
-    name: "Ralph Lauren",
-    logo: null,
-    logoDark: null,
-    media: "/assets/local-inventory/ralph-lauren/geometrico-dorado/1.webp",
-    bannerMedia: "/assets/catalogo/RayBan/RayBan7.jpeg",
-  },
-  {
     id: "ray-ban",
     name: "Ray-Ban",
-    logo: "/assets/logos/RayBan blanco.png",
-    logoDark: "/assets/logos/RayBan Negro.png",
+    logo: "/assets/logos/RayBan-blanco.png",
+    logoDark: "/assets/logos/RayBan-Negro.png",
     media: "/assets/local-inventory/ray-ban/rectangular-carey/1.webp",
     bannerMedia: "/assets/catalogo/RayBan/RayBan10.jpeg",
+  },
+  {
+    id: "oakley",
+    name: "Oakley",
+    logo: "/assets/logos/Oakley-Blanco.svg",
+    logoDark: "/assets/logos/Oakley-Negro.svg",
+    media: "/assets/local-inventory/ray-ban/cuadrado-transparente/1.webp",
+    bannerMedia: "/assets/catalogo/RayBan/RayBanVid4.mp4",
+  },
+  {
+    id: "vogue",
+    name: "Vogue Eyewear",
+    logo: "/assets/logos/Vogue-eyewear-blanco.png",
+    logoDark: "/assets/logos/Vogue-eyewear-negro.png",
+    media: "/assets/local-inventory/carolina-herrera/cat-eye-borgona/1.webp",
+    bannerMedia: "/assets/catalogo/Guess/Guess8.jpeg",
+  },
+  {
+    id: "guess",
+    name: "Guess",
+    logo: "/assets/logos/Guess-Blanco.png",
+    logoDark: "/assets/logos/Guess-negro.png",
+    media: "/assets/local-inventory/guess/redondo-rojo/1.webp",
+    bannerMedia: "/assets/catalogo/Guess/Guess11.jpeg",
   },
   {
     id: "carolina-herrera",
@@ -48,20 +74,12 @@ export const BRANDS: Brand[] = [
     bannerMedia: "/assets/catalogo/RayBan/RayBan2.jpeg",
   },
   {
-    id: "guess",
-    name: "Guess",
-    logo: "/assets/logos/Guess Blanco.png",
-    logoDark: "/assets/logos/Guess negro.png",
-    media: "/assets/local-inventory/guess/redondo-rojo/1.webp",
-    bannerMedia: "/assets/catalogo/Guess/Guess11.jpeg",
-  },
-  {
-    id: "otros",
-    name: "Otros del local",
+    id: "ralph-lauren",
+    name: "Ralph Lauren",
     logo: null,
     logoDark: null,
-    media: "/assets/local-inventory/otros/vitrina-multimarca-02/1.webp",
-    bannerMedia: "/assets/catalogo/Guess/Guess4.jpeg",
+    media: "/assets/local-inventory/ralph-lauren/geometrico-dorado/1.webp",
+    bannerMedia: "/assets/catalogo/RayBan/RayBan7.jpeg",
   },
 ];
 

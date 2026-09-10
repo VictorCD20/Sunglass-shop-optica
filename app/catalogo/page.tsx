@@ -4,11 +4,17 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { HeroCarousel, type HeroCarouselSlide } from "@/components/hero-carousel";
 import { Button } from "@/components/ui/button";
-import { BRANDS, COLLECTIONS, whatsapp } from "@/lib/site-data";
+import { BRANDS, COLLECTIONS, WHATSAPP_MESSAGES, whatsapp } from "@/lib/site-data";
+import { PageViewTracker } from "@/components/page-view-tracker";
+import { TrackedWhatsappLink } from "@/components/tracked-whatsapp-link";
 
 export const metadata: Metadata = {
-  title: "Catálogo por marca",
-  description: "Explora las marcas y modelos disponibles en Sunglass Shop Óptica.",
+  title: "Catálogo de lentes y armazones en Mérida | Sunglass Shop",
+  description:
+    "Explora modelos disponibles de Ray-Ban, Guess, Carolina Herrera, Ralph Lauren y más. Confirma disponibilidad y recibe asesoría en sucursal.",
+  alternates: {
+    canonical: "/catalogo",
+  },
 };
 
 export default function Catalogo() {
@@ -25,16 +31,26 @@ export default function Catalogo() {
 
   return (
     <main>
+      <PageViewTracker eventName="view_catalogo" eventCategory="navigation" eventLabel="view_catalogo" />
       <PageHero
         eyebrow="Catálogo sin precios en línea"
-        title="Elige una marca"
+        title="Catálogo de lentes y armazones en Mérida"
         text="Revisa modelos, medidas y materiales. La elección final se realiza en sucursal para comprobar proporción, puente y comodidad."
         media="/assets/catalogo/RayBan/RayBan11.jpeg"
         position="center 24%"
         carousel={<HeroCarousel slides={slides} />}
       >
         <Button asChild><a href="#marcas">Explorar marcas</a></Button>
-        <Button asChild variant="outline"><a href={whatsapp("Hola, quiero agendar una asesoría para elegir mis lentes.")} target="_blank" rel="noreferrer">Agendar asesoría</a></Button>
+        <Button asChild variant="outline">
+          <TrackedWhatsappLink
+            href={whatsapp(WHATSAPP_MESSAGES.asesoria)}
+            eventName="click_whatsapp_asesoria"
+            eventCategory="lead"
+            eventLabel="whatsapp_asesoria"
+          >
+            Agendar asesoría
+          </TrackedWhatsappLink>
+        </Button>
       </PageHero>
 
       <section id="marcas" className="brand-catalog section">
@@ -51,12 +67,19 @@ export default function Catalogo() {
           {BRANDS.map((brand) => {
             const count = COLLECTIONS[brand.id]?.length ?? 0;
             return (
-              <Link href={`/catalogo/${brand.id}`} className={`brand-catalog-card ${brand.media ? "" : "brand-catalog-card--logo"}`} key={brand.id}>
-                {brand.media ? <img className="brand-catalog-photo" src={brand.media} alt={`Colección ${brand.name}`} /> : null}
-                <span className="brand-catalog-overlay" aria-hidden="true" />
-                {brand.logo ? <img className="brand-catalog-logo" src={brand.logo} alt={brand.name} /> : <span className="brand-catalog-name">{brand.name}</span>}
+              <Link href={`/catalogo/${brand.id}`} className="brand-catalog-card" key={brand.id}>
+                {brand.logoDark ? (
+                  <img className="brand-catalog-logo" src={brand.logoDark} alt={brand.name} />
+                ) : brand.logo ? (
+                  <img className="brand-catalog-logo" src={brand.logo} alt={brand.name} />
+                ) : (
+                  <span className="brand-catalog-name">{brand.name}</span>
+                )}
+                {brand.media ? (
+                  <img className="brand-catalog-photo" src={brand.media} alt={`${brand.name} modelo representativo`} />
+                ) : null}
                 <div>
-                  <span>{count ? `${count} referencias para explorar` : "Consultar modelos en sucursal"}</span>
+                  <span>{count ? "3 modelos para explorar" : "Consultar en sucursal"}</span>
                   <strong>Ver colección <ArrowRight /></strong>
                 </div>
               </Link>
