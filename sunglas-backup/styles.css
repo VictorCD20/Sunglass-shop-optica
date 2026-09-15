@@ -292,13 +292,13 @@ h2 {
 .hero-slider {
     position: relative;
     height: 100vh;
-    min-height: 600px;
+    min-height: 620px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    padding-top: 80px;
+    padding-top: 70px; /* compensa el navbar fijo sin empujar demasiado */
     overflow: hidden;
 }
 
@@ -313,7 +313,6 @@ h2 {
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
     z-index: 1;
-    width: 100%;
 }
 
 .hero-slide.active {
@@ -326,7 +325,13 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.4) 100%);
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.85) 0%,    /* parte inferior muy oscura */
+        rgba(0,0,0,0.50) 40%,   /* medio moderado */
+        rgba(0,0,0,0.25) 70%,   /* arriba más ligero para ver la cara */
+        rgba(0,0,0,0.15) 100%
+    );
     z-index: 2;
 }
 
@@ -350,6 +355,75 @@ h2 {
     color: #ddd;
     margin-bottom: 40px;
     font-weight: 400;
+}
+
+/* --- Hero Brand Title (logo textual grande) --- */
+.hero-brand-label {
+    display: inline-block;
+    letter-spacing: 4px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.hero-brand-title {
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.hero-brand-line1 {
+    font-size: 4.5rem;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+/* El separador · es visible en blanco puro */
+.hero-brand-accent {
+    color: #ffffff;
+    font-weight: 200;
+    opacity: 0.55;
+    margin: 0 4px;
+}
+
+.hero-brand-sub {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 10px;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+}
+
+/* --- Hero Slide Dots --- */
+.hero-slide-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.hero-slide-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-slide-dots .dot.active {
+    background: #ffffff;
+    transform: scale(1.3);
 }
 
 /* --- 2. Experience Section --- */
@@ -1589,6 +1663,7 @@ model-viewer {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 15px;
+    color: inherit; /* Hereda el color del section padre (blanco o negro según contexto) */
 }
 
 .editorial-title-block p {
@@ -1597,6 +1672,15 @@ model-viewer {
     max-width: 600px;
     margin: 0 auto;
     font-weight: 300;
+}
+
+/* Cuando la sección es oscura, el texto debe ser blanco */
+.editorial-section .editorial-title-block h2 {
+    color: #ffffff;
+}
+
+.editorial-section.light-theme .editorial-title-block h2 {
+    color: #000000;
 }
 
 .light-theme .editorial-title-block p {
@@ -1634,13 +1718,15 @@ model-viewer {
 .editorial-card-media video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center; /* Default to center for balanced composition */
+    object-fit: contain;
+    object-position: center;
     transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 12px;
+    background-color: #ffffff;
 }
 
 .editorial-card-media.align-bottom img {
-    object-position: bottom center; /* Specifically for brands like Ray-Ban with logos at the bottom */
+    object-position: center; /* Center for glasses to show them fully */
 }
 
 .editorial-card:hover {
@@ -1849,9 +1935,20 @@ model-viewer {
         font-size: 2.2rem !important;
         margin-bottom: 15px;
     }
+    .hero-brand-title {
+        gap: 4px !important;
+    }
+    .hero-brand-line1 {
+        font-size: 2.2rem !important;
+        letter-spacing: -0.5px !important;
+    }
+    .hero-brand-sub {
+        font-size: 1.1rem !important;
+        letter-spacing: 5px !important;
+    }
     .hero-subtitle {
-        font-size: 1rem !important;
-        margin-bottom: 25px;
+        font-size: 0.95rem !important;
+        margin-bottom: 20px;
     }
     .hero-badges {
         gap: 10px !important;
@@ -2024,6 +2121,23 @@ model-viewer {
     font-weight: 500;
 }
 
+/* Fix textos azules visibles en cards de visagismo */
+.visagismo-card p,
+.visagismo-card h4,
+.process-step-card p,
+.process-step-card h3,
+.editorial-card-info p,
+.trust-card p,
+.lens-tech-card p {
+    color: inherit;
+}
+
+.visagismo-card p { color: #666666 !important; }
+.visagismo-card h4 { color: #111111 !important; }
+.process-step-card p { color: #555555 !important; }
+.editorial-card-info p { color: #888888 !important; }
+.trust-card p { color: #555555; }
+
 /* --- Brand Navigation Selector Grid --- */
 .brand-nav-section {
     padding: 60px 0;
@@ -2157,47 +2271,66 @@ model-viewer {
 }
 
 .lens-tech-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: #ffffff;
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: var(--radius-lg);
     padding: 35px 30px;
     text-align: left;
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
+    cursor: default;
 }
 
 .lens-tech-card:hover {
-    background: rgba(255,255,255,0.07);
-    border-color: rgba(255,255,255,0.2);
+    background: #000000;
+    border-color: rgba(255,255,255,0.3);
     transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 .lens-tech-icon {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: rgba(197, 168, 128, 0.15);
-    color: var(--primary-gold);
+    background: #111111;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     margin-bottom: 20px;
+    transition: all 0.35s ease;
+}
+
+.lens-tech-card:hover .lens-tech-icon {
+    background: #ffffff;
+    color: #000000;
 }
 
 .lens-tech-card h3 {
     font-size: 1.35rem;
     font-weight: 600;
-    color: #fff;
+    color: #111111;
     margin-bottom: 12px;
+    transition: color 0.35s ease;
+}
+
+.lens-tech-card:hover h3 {
+    color: #ffffff;
 }
 
 .lens-tech-card p {
     font-size: 0.95rem;
-    color: #aaa;
+    color: #555555;
     line-height: 1.6;
     margin: 0;
+    transition: color 0.35s ease;
 }
 
+.lens-tech-card:hover p {
+    color: #aaaaaa;
+}
+
+/* --- Visagismo Section --- */
 .visagismo-section {
     padding: 90px 0;
     background-color: #f7f7f9;
@@ -2222,9 +2355,39 @@ model-viewer {
 
 .visagismo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-color: #111;
 }
 
+/* Contenedor del icono SVG de visagismo */
+.visagismo-icon-wrap {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f4;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.visagismo-card:hover .visagismo-icon-wrap {
+    background: #111111;
+}
+
+.visagismo-svg {
+    width: 44px;
+    height: 44px;
+    color: #111111;
+    transition: color 0.3s ease;
+}
+
+.visagismo-card:hover .visagismo-svg {
+    color: #ffffff;
+}
+
+/* Ícono FA legacy (por si se usara en otras páginas) */
 .visagismo-card i {
     font-size: 2.2rem;
     color: var(--primary-dark);
@@ -2244,6 +2407,5 @@ model-viewer {
     line-height: 1.5;
     margin: 0;
 }
-
 
 

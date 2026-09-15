@@ -254,6 +254,31 @@ function toggleFullScreen() {
 let currentSlideIndex = 0;
 const slides = document.querySelectorAll('.hero-slide');
 
+// Generate slide dot indicators
+const dotsContainer = document.getElementById('heroSliderDots');
+if (dotsContainer && slides.length > 0) {
+    slides.forEach((_, idx) => {
+        const dot = document.createElement('span');
+        dot.className = 'dot' + (idx === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goToSlide(idx));
+        dotsContainer.appendChild(dot);
+    });
+}
+
+function updateDots() {
+    if (!dotsContainer) return;
+    dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
+        d.classList.toggle('active', i === currentSlideIndex);
+    });
+}
+
+function goToSlide(index) {
+    slides[currentSlideIndex].classList.remove('active');
+    currentSlideIndex = index;
+    slides[currentSlideIndex].classList.add('active');
+    updateDots();
+}
+
 function nextSlide() {
     if (slides.length === 0) return;
     
@@ -265,11 +290,12 @@ function nextSlide() {
     
     // Add active class to new slide
     slides[currentSlideIndex].classList.add('active');
+    updateDots();
 }
 
-// Initialize slider if slides exist
+// Initialize slider if slides exist — cambia cada 3 segundos con efecto fade
 if (slides.length > 0) {
-    setInterval(nextSlide, 4000); // Change every 4 seconds
+    setInterval(nextSlide, 3000);
 }
 
 // 6. Scroll Animations (Intersection Observer)
