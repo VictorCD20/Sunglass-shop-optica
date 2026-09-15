@@ -35,37 +35,47 @@
 
     <!-- 1. Hero Principal -->
     <section class="hero-slider" id="home">
-        <!-- Slide 1: Mujer con Aviadores dorados — cara en tercio superior -->
-        <div class="hero-slide active" style="background-image: url('images/hero_premium_glasses_1783195366505.png'); background-position: center 12%;"></div>
-        <!-- Slide 2: Ray-Ban Round — modelo de alto contraste, cara en tercio superior -->
-        <div class="hero-slide" style="background-image: url('assets/imagenes_catalogo/RayBan/RayBan2.jpeg'); background-position: center 5%;"></div>
-        <!-- Slide 3: Guess editorial — mujer rubia, cara rellena, texto GUESS abajo -->
-        <div class="hero-slide" style="background-image: url('assets/imagenes_catalogo/Guess/Guess5.jpeg'); background-position: center 22%;"></div>
-        <!-- Slide 4: RayBan Aviator — perfil izquierdo, cara en zona superior-izquierda -->
-        <div class="hero-slide" style="background-image: url('assets/imagenes_catalogo/RayBan/RayBan11.jpeg'); background-position: left 8%;"></div>
+        <!-- Slide 1: Fachada tienda — letrero principal visible -->
+        <div class="hero-slide active" style="background-image: url('images/store1.jpg'); background-position: center 30%;"></div>
+        <!-- Slide 2: Fachada tienda — encuadre más cerrado -->
+        <div class="hero-slide" style="background-image: url('images/store2.jpg'); background-position: center 35%;"></div>
+        <!-- Slide 3: Fachada tienda — vista completa y abierta -->
+        <div class="hero-slide" style="background-image: url('images/store3.jpg'); background-position: center 30%;"></div>
+        <!-- Slide 4: Fachada tienda — ángulo frontal, más interior visible -->
+        <div class="hero-slide" style="background-image: url('images/store4.jpg'); background-position: center 40%;"></div>
         <div class="overlay-gradient-dark"></div>
         
         <div class="container hero-content" style="position: relative; z-index: 10;">
             <span class="hero-brand-label">MÉRIDA, YUCATÁN &nbsp;·&nbsp; EST. 2014</span>
-            <h1 class="hero-brand-title animate-on-scroll fade-in-up">
+            <h1 class="hero-brand-title">
                 <span class="hero-brand-line1">SUNGLASS<span class="hero-brand-accent"> · </span>SHOP</span>
                 <span class="hero-brand-sub">ÓPTICA</span>
             </h1>
-            <p class="hero-subtitle animate-on-scroll fade-in-up" style="animation-delay: 0.2s; font-size: 1.15rem; max-width: 680px; margin: 0 auto 28px; font-weight: 300; color: rgba(255,255,255,0.88);">
-                Diagnóstico optométrico · Armazones originales · Asesoría personalizada de rostro
-            </p>
-            <div class="hero-badges" style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 30px;">
-                <span class="trust-badge"><i class="fa-solid fa-eye"></i> Diagnóstico Preciso</span>
-                <span class="trust-badge"><i class="fa-solid fa-gem"></i> Calidad de Micas</span>
-                <span class="trust-badge"><i class="fa-solid fa-heart"></i> Trato Cálido 1 a 1</span>
-                <span class="trust-badge"><i class="fa-solid fa-shield-halved"></i> Garantía</span>
+
+            <!-- Contenido que aparece al hacer scroll -->
+            <div class="hero-reveal-content" id="heroRevealContent">
+                <p class="hero-subtitle" style="font-size: 1.15rem; max-width: 680px; margin: 0 auto 28px; font-weight: 300; color: rgba(255,255,255,0.88);">
+                    Diagnóstico optométrico · Armazones originales · Asesoría personalizada de rostro
+                </p>
+                <div class="hero-badges" style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 30px;">
+                    <span class="trust-badge"><i class="fa-solid fa-eye"></i> Diagnóstico Preciso</span>
+                    <span class="trust-badge"><i class="fa-solid fa-gem"></i> Calidad de Micas</span>
+                    <span class="trust-badge"><i class="fa-solid fa-heart"></i> Trato Cálido 1 a 1</span>
+                    <span class="trust-badge"><i class="fa-solid fa-shield-halved"></i> Garantía</span>
+                </div>
+                <div class="hero-actions" style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 8px;">
+                    <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20mi%20diagn%C3%B3stico%20visual%20en%20Plaza%20Dorada." target="_blank" class="btn btn-primary-gold btn-pulse hero-btn" style="padding: 14px 32px; font-size: 1rem;"><i class="fa-brands fa-whatsapp"></i> Agendar Diagnóstico</a>
+                    <a href="catalogo.html" class="btn btn-outline-gold hero-btn" style="padding: 14px 32px; font-size: 1rem;">Ver Colecciones</a>
+                </div>
+                <!-- Indicadores de slides -->
+                <div class="hero-slide-dots" id="heroSliderDots"></div>
             </div>
-            <div class="hero-actions" style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 8px;">
-                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20mi%20diagn%C3%B3stico%20visual%20en%20Plaza%20Dorada." target="_blank" class="btn btn-primary-gold btn-pulse hero-btn" style="padding: 14px 32px; font-size: 1rem;"><i class="fa-brands fa-whatsapp"></i> Agendar Diagnóstico</a>
-                <a href="catalogo.html" class="btn btn-outline-gold hero-btn" style="padding: 14px 32px; font-size: 1rem;">Ver Colecciones</a>
+
+            <!-- Indicador de scroll (desaparece al revelar) -->
+            <div class="hero-scroll-hint" id="heroScrollHint">
+                <span>scroll</span>
+                <i class="fa-solid fa-chevron-down"></i>
             </div>
-            <!-- Indicadores de slides -->
-            <div class="hero-slide-dots" id="heroSliderDots"></div>
         </div>
     </section>
 

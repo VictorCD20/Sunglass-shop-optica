@@ -254,6 +254,26 @@ function toggleFullScreen() {
 let currentSlideIndex = 0;
 const slides = document.querySelectorAll('.hero-slide');
 
+// --- Hero Scroll Reveal ---
+const heroRevealContent = document.getElementById('heroRevealContent');
+const heroScrollHint    = document.getElementById('heroScrollHint');
+const heroBrandTitle    = document.querySelector('.hero-brand-title');
+let heroRevealed = false;
+
+function revealHeroContent() {
+    if (heroRevealed) return;
+    heroRevealed = true;
+    heroRevealContent.classList.add('revealed');
+    heroBrandTitle.classList.add('compacted');
+    if (heroScrollHint) heroScrollHint.classList.add('hidden');
+}
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 60) {
+        revealHeroContent();
+    }
+}, { passive: true });
+
 // Generate slide dot indicators
 const dotsContainer = document.getElementById('heroSliderDots');
 if (dotsContainer && slides.length > 0) {
