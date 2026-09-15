@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Sunglass Shop Óptica</title>
+    <link rel="icon" type="image/x-icon" href="assets/favivon.ico">
+    <meta name="description" content="Explora nuestro catálogo exclusivo de armazones y lentes de marca en Mérida: Ray-Ban, Ralph Lauren, Guess, Carolina Herrera, Vogue Eyewear y más.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="page-catalogo" style="background-color: var(--bg-light);">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo_sunglasses.svg" alt="SUNGLASS SHOP" class="logo-img">
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="catalogo.html" class="nav-link active">Catálogo</a>
+                <a href="servicios.html" class="nav-link">Servicios</a>
+                <a href="beneficios.html" class="nav-link">Beneficios</a>
+                <a href="convenios.html" class="nav-link">Convenios</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20una%20asesor%C3%ADa%20para%20elegir%20mis%20lentes." target="_blank" class="btn btn-outline-gold"><i class="fa-brands fa-whatsapp"></i> Agendar Cita Presencial</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Catalog Hero Section -->
+    <div class="catalog-hero" id="hero-showroom">
+        <video autoplay muted loop playsinline class="catalog-hero-video">
+            <source src="assets/imagenes_catalogo/RayBan/RayBanVid1.mp4" type="video/mp4">
+        </video>
+        <div class="catalog-hero-overlay"></div>
+        
+        <div class="catalog-hero-content">
+            <span class="section-badge" style="color: #ffffff; border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.1);">CATÁLOGO EN SUCURSAL</span>
+            <h1>Catálogo de Lentes y Armazones</h1>
+            <p style="max-width: 700px; margin: 15px auto 30px; font-size: 1.2rem; color: #ddd; font-weight: 300;">Explora modelos reales de Ray-Ban, Ralph Lauren, Guess, Carolina Herrera, Vogue Eyewear y más. La elección final se confirma en sucursal en Mérida para garantizar un ajuste cómodo y óptimo.</p>
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="#marcas-catalog" class="btn btn-primary-gold" style="background-color: #ffffff; color: #000000; padding: 14px 35px;">Explorar Colecciones</a>
+                <a href="https://wa.me/529999874504?text=Hola,%20vi%20el%20cat%C3%A1logo%20en%20su%20sitio%20web%20y%20quiero%20consultar%20disponibilidad%20de%20un%20modelo." target="_blank" class="btn btn-outline-gold" style="padding: 14px 35px; border-color: #ffffff; color: #ffffff;"><i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brand Navigation Selector Section -->
+    <section class="brand-nav-section" id="marcas-catalog">
+        <div class="container text-center">
+            <span class="section-badge" style="color: #888; border-color: #333; margin-bottom: 15px;">MARCAS Y COLECCIONES</span>
+            <h2 style="color: #ffffff; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 2px;">Selecciona una Marca</h2>
+            <p style="color: #888; max-width: 600px; margin: 10px auto 30px; font-weight: 300;">Haz clic en cualquiera de nuestras marcas para ver sus modelos y fotografías en exhibición.</p>
+            
+            <div class="brand-nav-grid">
+                <a href="#rayban-collection" class="brand-nav-card">
+                    <img src="assets/logos/RayBan-blanco.png" alt="Ray-Ban">
+                    <span>Ray-Ban</span>
+                </a>
+                <a href="#ralph-collection" class="brand-nav-card">
+                    <span class="brand-nav-title">Ralph Lauren</span>
+                    <span>3 modelos reales</span>
+                </a>
+                <a href="#guess-collection" class="brand-nav-card">
+                    <img src="assets/logos/Guess-Blanco.png" alt="Guess">
+                    <span>Guess</span>
+                </a>
+                <a href="#ch-collection" class="brand-nav-card">
+                    <img src="assets/logos/Carolina-Herrera-Logo-PNG.png" alt="Carolina Herrera">
+                    <span>Carolina Herrera</span>
+                </a>
+                <a href="#vogue-collection" class="brand-nav-card">
+                    <img src="assets/logos/Vogue-eyewear-blanco.png" alt="Vogue Eyewear">
+                    <span>Vogue Eyewear</span>
+                </a>
+                <a href="#oakley-collection" class="brand-nav-card">
+                    <img src="assets/logos/Oakley-Blanco.svg" alt="Oakley">
+                    <span>Oakley</span>
+                </a>
+                <a href="#vitrina-collection" class="brand-nav-card">
+                    <span class="brand-nav-title"><i class="fa-solid fa-store" style="margin-right: 6px;"></i> Vitrina Local</span>
+                    <span>Exhibición Real</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ralph Lauren Section -->
+    <section class="editorial-section" id="ralph-collection" style="background-color: #0c0c0e; color: #ffffff; border-top: 1px solid #1a1a1a;">
+        <div class="container">
+            <div class="editorial-title-block">
+                <span class="section-badge" style="color: #ffffff; border-color: rgba(255,255,255,0.3);">INVENTARIO EN SUCURSAL</span>
+                <h2>Ralph Lauren</h2>
+                <p>Armazones ópticos de sofisticación sobria, elegancia atemporal y acabados premium fotografiados directamente en la sucursal de Mérida.</p>
+            </div>
+
+            <div class="editorial-grid">
+                <!-- Card 1 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20consultar%20disponibilidad%20del%20armaz%C3%B3n%20Ralph%20Lauren%20Geom%C3%A9trico%20Dorado." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media align-bottom">
+                            <span class="editorial-card-badge">Fotografía Real</span>
+                            <img src="assets/local-inventory/ralph-lauren/geometrico-dorado/1.webp" alt="Ralph Lauren Geométrico Dorado">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Geométrico Dorado</h3>
+                                <p>Armazón metálico fino con terminales en acabado carey</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20consultar%20disponibilidad%20del%20armaz%C3%B3n%20Ralph%20Lauren%20Rectangular%20Carey." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media align-bottom">
+                            <span class="editorial-card-badge">Fotografía Real</span>
+                            <img src="assets/local-inventory/ralph-lauren/rectangular-carey/1.webp" alt="Ralph Lauren Rectangular Carey">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Rectangular Carey</h3>
+                                <p>Frente rectangular elegante de perfil refinado y varillas oscuras</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20consultar%20disponibilidad%20del%20armaz%C3%B3n%20Ralph%20Lauren%20Rectangular%20Nude." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media align-bottom">
+                            <span class="editorial-card-badge">Fotografía Real</span>
+                            <img src="assets/local-inventory/ralph-lauren/rectangular-nude/1.webp" alt="Ralph Lauren Rectangular Nude">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Rectangular Nude</h3>
+                                <p>Armazón óptico translúcido de acabado cálido y sofisticado</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ray-Ban Section -->
+    <section class="editorial-section" id="rayban-collection" style="border-top: 1px solid #111;">
+        <div class="container">
+            <div class="editorial-title-block">
+                <span class="section-badge" style="color: #ffffff; border-color: rgba(255,255,255,0.3);">DISTRIBUIDOR AUTORIZADO</span>
+                <h2>Colección Ray-Ban</h2>
+                <p>Siluetas icónicas y referencias en exhibición real. Selecciona tu modelo para consultar disponibilidad y agendar tu prueba presencial.</p>
+            </div>
+
+            <!-- Ray-Ban Local Inventory & Iconic Grid -->
+            <div class="editorial-grid">
+                
+                <!-- Ray-Ban Local 1 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20una%20visita%20para%20probarme%20los%20lentes%20Ray-Ban%20Cuadrado%20Transparente." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media align-bottom">
+                            <span class="editorial-card-badge" style="background-color: var(--primary-gold); color: #000;">En Sucursal</span>
+                            <img src="assets/local-inventory/ray-ban/cuadrado-transparente/1.webp" alt="Ray-Ban Cuadrado Transparente">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Cuadrado Transparente</h3>
+                                <p>Armazón cristalino de frente amplio con varillas oscuras</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Ray-Ban Local 2 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20una%20visita%20para%20probarme%20los%20lentes%20Ray-Ban%20Rectangular%20Carey." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media align-bottom">
+                            <span class="editorial-card-badge" style="background-color: var(--primary-gold); color: #000;">En Sucursal</span>
+                            <img src="assets/local-inventory/ray-ban/rectangular-carey/1.webp" alt="Ray-Ban Rectangular Carey">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Rectangular Carey</h3>
+                                <p>Líneas rectangulares Ray-Ban en acabado carey profundo</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 1 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20una%20visita%20para%20probarme%20los%20lentes%20Ray-Ban%20Aviator%20en%20sucursal." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media align-bottom">
+                            <span class="editorial-card-badge">Original</span>
+                            <img src="assets/imagenes_catalogo/RayBan/RayBan1.jpeg" alt="Ray-Ban Aviator Classic">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Aviator Classic</h3>
+                                <p>Silueta clásica metálica dorada</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20una%20visita%20para%20probarme%20los%20lentes%20Ray-Ban%20Wayfarer%20en%20sucursal." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media align-bottom">
+                            <span class="editorial-card-badge">Original</span>
+                            <img src="assets/imagenes_catalogo/RayBan/RayBan2.jpeg" alt="Ray-Ban Wayfarer Original">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Wayfarer Original</h3>
+                                <p>Marco de acetato negro brillante</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20una%20visita%20para%20probarme%20los%20lentes%20Ray-Ban%20Clubmaster%20en%20sucursal." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media align-bottom">
+                            <span class="editorial-card-badge">Original</span>
+                            <img src="assets/imagenes_catalogo/RayBan/RayBan3.jpeg" alt="Ray-Ban Clubmaster Retro">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Clubmaster Retro</h3>
+                                <p>Inspiración intelectual años 50</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20una%20visita%20para%20probarme%20los%20lentes%20Ray-Ban%20Erika%20en%20sucursal." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media align-bottom">
+                            <span class="editorial-card-badge">Tendencia</span>
+                            <img src="assets/imagenes_catalogo/RayBan/RayBan4.jpeg" alt="Ray-Ban Erika Chic">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Erika Chic</h3>
+                                <p>Silueta redonda oversized patilla fina</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 5 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20una%20visita%20para%20probarme%20los%20lentes%20Ray-Ban%20Justin%20en%20sucursal." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media align-bottom">
+                            <span class="editorial-card-badge">Moderno</span>
+                            <img src="assets/imagenes_catalogo/RayBan/Rayban5.jpeg" alt="Ray-Ban Justin Sport">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Justin Sport</h3>
+                                <p>Acabado engomado y lentes rectangulares</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 6 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20una%20visita%20para%20probarme%20los%20lentes%20Ray-Ban%20Round%20en%20sucursal." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media align-bottom">
+                            <span class="editorial-card-badge">Retro</span>
+                            <img src="assets/imagenes_catalogo/RayBan/RayBan6.jpeg" alt="Ray-Ban Round Metal">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Round Metal</h3>
+                                <p>Modelo circular unisex minimalista</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Intercalated Video Showcase 1 -->
+    <section class="video-showcase-section">
+        <video autoplay muted loop playsinline class="video-showcase-bg">
+            <source src="assets/imagenes_catalogo/RayBan/RayBanVid2.mp4" type="video/mp4">
+        </video>
+        <div class="video-showcase-overlay"></div>
+        <div class="video-showcase-content">
+            <h3>Innovación y Precisión Óptica</h3>
+            <p>Descubre el proceso de diseño y la calidad de los armazones Ray-Ban. Diseñados para durar y brindar el mejor confort visual.</p>
+        </div>
+    </section>
+
+    <!-- Carolina Herrera Section -->
+    <section class="editorial-section light-theme" id="ch-collection" style="background-color: #ffffff; color: #000000; padding-top: 80px;">
+        <div class="container">
+            <div class="editorial-title-block">
+                <span class="section-badge" style="color: #000000; border-color: rgba(0,0,0,0.3);">ELEGANCIA FEMENINA</span>
+                <h2>Carolina Herrera</h2>
+                <p>Siluetas sofisticadas con acentos metálicos y tonos exclusivos. Fotografías reales de la selección en exhibición.</p>
+            </div>
+
+            <div class="editorial-grid">
+                <!-- CH Card 1 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20consultar%20disponibilidad%20de%20los%20lentes%20Carolina%20Herrera%20Cat-Eye%20Borgo%C3%B1a." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media">
+                            <span class="editorial-card-badge">Exhibidor Real</span>
+                            <img src="assets/local-inventory/carolina-herrera/cat-eye-borgona/1.webp" alt="Carolina Herrera Cat-Eye Borgoña">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Cat-Eye Borgoña & Oro</h3>
+                                <p>Selección metálica cat-eye en tonos borgoña con detalles dorados</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guess Eyewear Section -->
+    <section class="editorial-section" id="guess-collection" style="background-color: #000000; color: #ffffff; border-top: 1px solid #111; padding-top: 80px;">
+        <div class="container">
+            <div class="editorial-title-block text-center">
+                <span class="section-badge" style="color: #ffffff; border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.1);">ESTILO AUDAZ</span>
+                <h2 style="color: #ffffff;">Colección Guess</h2>
+                <p style="color: #aaa; font-weight: 300;">Diseño joven, dinámico y seductor. Explora tanto las piezas fotografiadas en nuestra sucursal como los modelos de pasarela.</p>
+            </div>
+
+            <!-- Guess Grid Showroom -->
+            <div class="editorial-grid">
+
+                <!-- Guess Local 1 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20consultar%20disponibilidad%20del%20armaz%C3%B3n%20Guess%20Redondo%20Rojo." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media">
+                            <span class="editorial-card-badge" style="background-color: var(--primary-gold); color: #000;">En Sucursal</span>
+                            <img src="assets/local-inventory/guess/redondo-rojo/1.webp" alt="Guess Redondo Rojo">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Redondo Rojo</h3>
+                                <p>Armazón óptico circular con frente rojo y detalles metálicos claros</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Guess Local 2 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20consultar%20disponibilidad%20del%20armaz%C3%B3n%20Guess%20Carey%20Ovalado." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media">
+                            <span class="editorial-card-badge" style="background-color: var(--primary-gold); color: #000;">En Sucursal</span>
+                            <img src="assets/local-inventory/guess/carey-ovalado/1.webp" alt="Guess Carey Ovalado">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Carey Ovalado</h3>
+                                <p>Contorno ovalado suave en acabado carey oscuro atemporal</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Guess Local 3 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20consultar%20disponibilidad%20del%20armaz%C3%B3n%20Guess%20Rectangular%20Carey." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media">
+                            <span class="editorial-card-badge" style="background-color: var(--primary-gold); color: #000;">En Sucursal</span>
+                            <img src="assets/local-inventory/guess/rectangular-carey/1.webp" alt="Guess Rectangular Carey">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Rectangular Carey</h3>
+                                <p>Perfil compacto y acabado carey cálido con bisagras flexibles</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Guess Card 1 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20vi%20la%20colecci%C3%B3n%20Guess%20Luxe%20Monogram%20y%20quiero%20agendar%20una%20cita." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media">
+                            <span class="editorial-card-badge">Icónico</span>
+                            <img src="assets/imagenes_catalogo/Guess/Guess1.jpeg" alt="Guess Luxe Monogram">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Luxe Monogram</h3>
+                                <p>Detalles distintivos de la firma con acabados premium</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Guess Card 2 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20vi%20la%20colecci%C3%B3n%20Guess%20Classic%20Aviator%20y%20quiero%20agendar%20una%20cita." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media">
+                            <span class="editorial-card-badge">Diseño</span>
+                            <img src="assets/imagenes_catalogo/Guess/Guess2.jpeg" alt="Guess Classic Aviator">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Classic Aviator</h3>
+                                <p>Líneas de aviador reinventadas con puente doble</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Guess Card 3 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20vi%20la%20colecci%C3%B3n%20Guess%20Retro%20Square%20y%20quiero%20agendar%20una%20cita." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media">
+                            <span class="editorial-card-badge">Retro</span>
+                            <img src="assets/imagenes_catalogo/Guess/Guess3.jpeg" alt="Guess Retro Square">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Retro Square</h3>
+                                <p>Silueta cuadrada oversized de gran presencia</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Vogue Eyewear Section (Light Theme) -->
+    <section class="editorial-section light-theme" id="vogue-collection" style="background-color: #ffffff; color: #000000;">
+        <div class="container">
+            <div class="editorial-title-block">
+                <span class="section-badge" style="color: #000000; border-color: rgba(0,0,0,0.3);">PASARELA Y VANGUARDIA</span>
+                <h2>Vogue Eyewear</h2>
+                <p>Diseño contemporáneo y siluetas chic en movimiento. Descubre las referencias disponibles para graduación y sol.</p>
+            </div>
+
+            <!-- Vogue Video Grid Showroom -->
+            <div class="editorial-grid">
+
+                <!-- Vogue Card 1 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20vi%20la%20colecci%C3%B3n%20Vogue%20Runway%20Classic%20y%20quiero%20agendar%20una%20cita." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media">
+                            <span class="editorial-card-badge">Chic</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/imagenes_catalogo/Vogue/VogueVid1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Vogue Classic</h3>
+                                <p>Marcos elegantes y atemporales</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Vogue Card 2 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20vi%20la%20colecci%C3%B3n%20Vogue%20Glamour%20y%20quiero%20agendar%20una%20cita." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media">
+                            <span class="editorial-card-badge">Glamour</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/imagenes_catalogo/Vogue/VogueVid2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Vogue Glamour</h3>
+                                <p>Siluetas contemporáneas para destacar</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Vogue Card 3 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20vi%20la%20colecci%C3%B3n%20Vogue%20Moda%20Cat-Eye%20y%20quiero%20agendar%20una%20cita." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media">
+                            <span class="editorial-card-badge">Tendencia</span>
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/imagenes_catalogo/Vogue/VogueVid7.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Vogue Cat-Eye</h3>
+                                <p>Formas retro-chics con colores vibrantes</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Oakley Section -->
+    <section class="editorial-section" id="oakley-collection" style="background-color: #070709; color: #ffffff; border-top: 1px solid #1a1a1a;">
+        <div class="container text-center">
+            <div class="editorial-title-block">
+                <span class="section-badge" style="color: #ffffff; border-color: rgba(255,255,255,0.3);">RENDIMIENTO Y DEPORTE</span>
+                <h2>Oakley Performance</h2>
+                <p>Armazones de máxima resistencia, ergonomía deportiva y graduación especializada para vida activa.</p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 50px 30px; max-width: 800px; margin: 0 auto;">
+                <img src="assets/logos/Oakley-Blanco.svg" alt="Oakley" style="max-height: 50px; margin-bottom: 20px;">
+                <h3 style="font-size: 1.6rem; font-weight: 500; margin-bottom: 15px;">Modelos Deportivos y Oftálmicos Oakley</h3>
+                <p style="color: #aaa; margin-bottom: 25px; line-height: 1.6;">Contamos con existencias en sucursal y pedidos directos con graduación oficial. Agenda una prueba física para elegir el modelo que mejor encaje en tu anatomía.</p>
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20lentes%20Oakley%20deportivos%20graduados." target="_blank" class="btn btn-primary-gold" style="background-color: #ffffff; color: #000000; padding: 14px 35px;"><i class="fa-brands fa-whatsapp"></i> Consultar Oakley en Sucursal</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multibrand Local Showcase Section -->
+    <section class="editorial-section" id="vitrina-collection" style="background-color: #0c0c0e; color: #ffffff; border-top: 1px solid #1a1a1a;">
+        <div class="container">
+            <div class="editorial-title-block">
+                <span class="section-badge" style="color: #ffffff; border-color: rgba(255,255,255,0.3);">EXPOSICIÓN EN SUCURSAL</span>
+                <h2>Vitrinas de Exhibición</h2>
+                <p>Selección real capturada en la óptica de Plaza Dorada Mérida. Visítanos para explorar docenas de armazones disponibles.</p>
+            </div>
+
+            <div class="editorial-grid">
+                <!-- Vitrina 1 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20vi%20la%20vitrina%20multimarca%2001%20en%20su%20sitio%20y%20quiero%20agendar%20visita." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media">
+                            <span class="editorial-card-badge">Fotografía en Local</span>
+                            <img src="assets/local-inventory/otros/vitrina-multimarca-01/1.webp" alt="Vitrina Multimarca 01">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Vitrina Multimarca 01</h3>
+                                <p>Exhibición física con variedad de tonos y materiales en tienda</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Vitrina 2 -->
+                <a href="https://wa.me/529999874504?text=Hola,%20vi%20la%20vitrina%20multimarca%2002%20en%20su%20sitio%20y%20quiero%20agendar%20visita." target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="editorial-card animate-on-scroll fade-in-up">
+                        <div class="editorial-card-media">
+                            <span class="editorial-card-badge">Fotografía en Local</span>
+                            <img src="assets/local-inventory/otros/vitrina-multimarca-02/1.webp" alt="Vitrina Multimarca 02">
+                        </div>
+                        <div class="editorial-card-info">
+                            <div>
+                                <h3>Vitrina Multimarca 02</h3>
+                                <p>Colección de armazones oftálmicos en Plaza Dorada Mérida</p>
+                            </div>
+                            <button class="btn-arrow" aria-label="Consultar por WhatsApp"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- General Conversion Block -->
+    <section class="catalog-conversion" style="background-color: #000000; border-top: 1px solid #111;">
+        <div class="container" style="max-width: 700px;">
+            <h3 style="font-size: 2rem; margin-bottom: 15px; font-weight: 500; color: #ffffff;">¿Buscas un armazón o graduación específica?</h3>
+            <p style="color: #888; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; font-weight: 300;">Nuestros asesores ópticos te recibirán en Mérida para medir tu fórmula, recomendar el armazón ideal según tu rostro y brindarte la mejor garantía.</p>
+            <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20una%20visita%20a%20la%20sucursal%20de%20Plaza%20Dorada." target="_blank" class="btn btn-primary-gold" style="background-color: #ffffff; color: #000000; padding: 14px 40px;"><i class="fa-solid fa-calendar-check"></i> Agenda tu Cita Presencial</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container" style="padding-top: 40px; padding-bottom: 40px;">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo_sunglasses.svg" alt="SUNGLASS SHOP" class="logo-img">
+                </a>
+                <p style="margin-top: 15px; font-weight: 300;">Autoridad, calidad y asesoría experta en salud visual. Más de 11 años de experiencia cuidando tu mirada.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=61592714450512" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/sunglass.shop.optica/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Menú</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="beneficios.html">Beneficios</a></li>
+                    <li><a href="convenios.html">Convenios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Plaza Dorada, Calle 50 no. 143 loc 64, C. 19, 97220 Mérida, Yuc.</p>
+                <p><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Lun a Dom: 10:00 AM - 8:00 PM</p>
+                <p><i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> +52 999 987 4504</p>
+                <p><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> asesoria@sunglassshop.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center" style="padding: 20px 0; border-top: 1px solid #111;">
+            <p>&copy; 2026 SUNGLASS SHOP. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/529999874504?text=Hola,%20vi%20el%20cat%C3%A1logo%20en%20su%20sitio%20web%20y%20quiero%20recibir%20asesor%C3%ADa." class="whatsapp-float" target="_blank" aria-label="Chat en WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    
+    <script src="script.js"></script>
+</body>
+</html>
