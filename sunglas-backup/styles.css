@@ -2307,8 +2307,8 @@ model-viewer {
     color: inherit;
 }
 
-.visagismo-card p { color: #666666 !important; }
-.visagismo-card h4 { color: #111111 !important; }
+.visagismo-card p { color: var(--text-light) !important; }
+.visagismo-card h4 { color: var(--primary-dark) !important; }
 .process-step-card p { color: #555555 !important; }
 .editorial-card-info p { color: #888888 !important; }
 .trust-card p { color: #555555; }
@@ -2524,14 +2524,14 @@ model-viewer {
     border-radius: var(--radius-md);
     padding: 30px 20px;
     text-align: center;
-    border: 1px solid #e8e8ed;
+    border: 1px solid rgba(0, 119, 182, 0.12); /* Light blue border */
     transition: all 0.3s ease;
 }
 
 .visagismo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    border-color: #111;
+    box-shadow: 0 10px 25px rgba(0, 119, 182, 0.15);
+    border-color: var(--accent);
 }
 
 /* Contenedor del icono SVG de visagismo */
@@ -2539,22 +2539,22 @@ model-viewer {
     width: 80px;
     height: 80px;
     margin: 0 auto 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f0f0f4;
+    background: rgba(0, 119, 182, 0.08); /* Light blue */
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 0.3s ease;
 }
 
 .visagismo-card:hover .visagismo-icon-wrap {
-    background: #111111;
+    background: linear-gradient(135deg, var(--primary-gold), var(--accent));
 }
 
 .visagismo-svg {
     width: 44px;
     height: 44px;
-    color: #111111;
+    color: var(--primary-dark);
     transition: color 0.3s ease;
 }
 
@@ -2573,12 +2573,12 @@ model-viewer {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #111;
+    color: var(--primary-dark);
 }
 
 .visagismo-card p {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-light);
     line-height: 1.5;
     margin: 0;
 }
