@@ -35,14 +35,14 @@
 
     <!-- 1. Hero Principal -->
     <section class="hero-slider" id="home">
-        <!-- Slide 1: Fachada tienda — letrero principal visible -->
-        <div class="hero-slide active" style="background-image: url('images/store1.jpg'); background-position: center 30%;"></div>
-        <!-- Slide 2: Fachada tienda — encuadre más cerrado -->
-        <div class="hero-slide" style="background-image: url('images/store2.jpg'); background-position: center 35%;"></div>
-        <!-- Slide 3: Fachada tienda — vista completa y abierta -->
-        <div class="hero-slide" style="background-image: url('images/store3.jpg'); background-position: center 30%;"></div>
-        <!-- Slide 4: Fachada tienda — ángulo frontal, más interior visible -->
-        <div class="hero-slide" style="background-image: url('images/store4.jpg'); background-position: center 40%;"></div>
+        <!-- Slide 1: Fachada tienda — interior visible -->
+        <div class="hero-slide active" style="background-image: url('images/store1.jpg'); background-position: center 55%;"></div>
+        <!-- Slide 2: Fachada tienda — interior visible -->
+        <div class="hero-slide" style="background-image: url('images/store2.jpg'); background-position: center 55%;"></div>
+        <!-- Slide 3: Fachada tienda — interior visible -->
+        <div class="hero-slide" style="background-image: url('images/store3.jpg'); background-position: center 55%;"></div>
+        <!-- Slide 4: Fachada tienda — interior visible -->
+        <div class="hero-slide" style="background-image: url('images/store4.jpg'); background-position: center 60%;"></div>
         <div class="overlay-gradient-dark"></div>
         
         <div class="container hero-content" style="position: relative; z-index: 10;">
@@ -54,18 +54,17 @@
 
             <!-- Contenido que aparece al hacer scroll -->
             <div class="hero-reveal-content" id="heroRevealContent">
-                <p class="hero-subtitle" style="font-size: 1.15rem; max-width: 680px; margin: 0 auto 28px; font-weight: 300; color: rgba(255,255,255,0.88);">
+                <p class="hero-subtitle" style="font-size: 1.15rem; max-width: 680px; margin: 0 auto 16px; font-weight: 300; color: rgba(255,255,255,0.88);">
                     Diagnóstico optométrico · Armazones originales · Asesoría personalizada de rostro
                 </p>
-                <div class="hero-badges" style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 30px;">
-                    <span class="trust-badge"><i class="fa-solid fa-eye"></i> Diagnóstico Preciso</span>
-                    <span class="trust-badge"><i class="fa-solid fa-gem"></i> Calidad de Micas</span>
-                    <span class="trust-badge"><i class="fa-solid fa-heart"></i> Trato Cálido 1 a 1</span>
-                    <span class="trust-badge"><i class="fa-solid fa-shield-halved"></i> Garantía</span>
-                </div>
+                <p style="font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-bottom: 28px; letter-spacing: 1px;">
+                    <i class="fa-solid fa-location-dot" style="color: var(--accent);"></i> Plaza Dorada, Mérida &nbsp;·&nbsp; Lun–Dom 10am–8pm
+                </p>
+
                 <div class="hero-actions" style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 8px;">
                     <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20mi%20diagn%C3%B3stico%20visual%20en%20Plaza%20Dorada." target="_blank" class="btn btn-primary-gold btn-pulse hero-btn" style="padding: 14px 32px; font-size: 1rem;"><i class="fa-brands fa-whatsapp"></i> Agendar Diagnóstico</a>
-                    <a href="catalogo.html" class="btn btn-outline-gold hero-btn" style="padding: 14px 32px; font-size: 1rem;">Ver Colecciones</a>
+                    <a href="tel:+529999874504" class="btn btn-outline-gold hero-btn" style="padding: 14px 28px; font-size: 1rem;"><i class="fa-solid fa-phone"></i> Llamar</a>
+                    <a href="catalogo.html" class="btn btn-outline-gold hero-btn" style="padding: 14px 28px; font-size: 1rem;">Ver Colecciones</a>
                 </div>
                 <!-- Indicadores de slides -->
                 <div class="hero-slide-dots" id="heroSliderDots"></div>
@@ -143,11 +142,11 @@
     </section>
 
     <!-- 4. Sección Explicativa de Calidad y Micas -->
-    <section class="lens-tech-section" id="calidad-micas">
+    <section class="lens-tech-section" id="calidad-micas" style="background: linear-gradient(135deg, var(--primary-dark) 0%, #0d2137 100%); padding: 90px 0;">
         <div class="container text-center animate-on-scroll fade-in-up">
-            <span class="section-badge" style="color: #fff; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1);">CALIDAD TECNOLÓGICA</span>
+            <span class="section-badge" style="color: var(--accent); border-color: rgba(0,180,216,0.3); background: rgba(0,180,216,0.1);">CALIDAD TECNOLÓGICA</span>
             <h2 style="font-size: 2.6rem; color: #fff; margin-top: 15px; font-weight: 600;">Micas y Materiales de Alto Rendimiento</h2>
-            <p style="color: #aaa; max-width: 650px; margin: 10px auto 0; font-size: 1.1rem; font-weight: 300;">La diferencia de ver bien está en la calidad óptica. Explicamos cada tratamiento para que elijas con total certeza.</p>
+            <p style="color: rgba(255,255,255,0.6); max-width: 650px; margin: 10px auto 0; font-size: 1.1rem; font-weight: 300;">La diferencia de ver bien está en la calidad óptica. Explicamos cada tratamiento para que elijas con total certeza.</p>
 
             <div class="lens-tech-grid">
                 <!-- Tech 1: Filtro Anti Luz Azul -->
@@ -249,7 +248,46 @@
         </div>
     </section>
 
-    <!-- 6. El Trato Humano y Pilares de Confianza -->
+    <!-- 6-A. Servicios Especializados -->
+    <section class="servicios-section" id="servicios-esp">
+        <div class="container text-center animate-on-scroll fade-in-up">
+            <span class="section-badge" style="color: var(--primary-gold); border-color: rgba(0,119,182,0.3); background: rgba(0,119,182,0.06);">SERVICIOS ESPECIALIZADOS</span>
+            <h2 style="font-size: 2.5rem; color: var(--primary-dark); margin-top: 15px; font-weight: 600;">Todo lo que necesita tu visión en un solo lugar</h2>
+            <p style="color: var(--text-light); max-width: 620px; margin: 10px auto 0; font-size: 1.05rem; font-weight: 300;">Mucho más que lentes. Ofrecemos soluciones completas para el cuidado y mantenimiento de tu óptica.</p>
+
+            <div class="servicios-grid">
+                <!-- Servicio 1: Hospital de Lentes -->
+                <div class="servicio-card animate-on-scroll fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="servicio-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <h3>Hospital de Lentes</h3>
+                    <p>Reparamos bisagras, patillas y puentes con refacciones <strong>100% originales de distribuidor</strong>. Tu armazón favorito tiene solución.</p>
+                </div>
+
+                <!-- Servicio 2: Mantenimiento Gratuito -->
+                <div class="servicio-card animate-on-scroll fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="servicio-icon"><i class="fa-solid fa-sparkles"></i></div>
+                    <h3>Mantenimiento Gratuito</h3>
+                    <p>Ajuste de plaquetas, cambio de tornillos y limpieza por ultrasonido <strong>sin costo adicional</strong>, de por vida para clientes.</p>
+                </div>
+
+                <!-- Servicio 3: Lentes Deportivas -->
+                <div class="servicio-card animate-on-scroll fade-in-up" style="transition-delay: 0.3s;">
+                    <div class="servicio-icon"><i class="fa-solid fa-person-running"></i></div>
+                    <h3>Micas y Lentes Deportivos</h3>
+                    <p>Soluciones especializadas para ciclismo, natación, golf y deportes de alto impacto. <strong>Rendimiento y protección UV máxima.</strong></p>
+                </div>
+
+                <!-- Servicio 4: Precios Transparentes -->
+                <div class="servicio-card animate-on-scroll fade-in-up" style="transition-delay: 0.4s;">
+                    <div class="servicio-icon"><i class="fa-solid fa-tag"></i></div>
+                    <h3>Precios Transparentes</h3>
+                    <p>Modelos de referencia con precio visible desde la primera consulta. <strong>Sin sorpresas</strong> ni costos ocultos al momento de tu atención.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6-B. El Trato Humano y Pilares de Confianza -->
     <section class="trust-pillars" style="padding: 90px 0; background-color: #ffffff;">
         <div class="container text-center animate-on-scroll fade-in-up">
             <span class="section-badge" style="color: var(--primary-gold); border-color: rgba(197, 168, 128, 0.4);">TRATO Y GARANTÍA SUNGLASS SHOP</span>
@@ -278,19 +316,20 @@
     </section>
 
     <!-- 7. Reseñas Reales -->
-    <section class="testimonials-section" style="padding: 80px 0; background-color: #f7f7f9;">
+    <section class="testimonials-section" style="padding: 80px 0; background-color: var(--bg-light);">
         <div class="container text-center animate-on-scroll fade-in-up">
-            <span class="section-badge" style="color: #666; border-color: #ccc;">OPINIONES DE CLIENTES</span>
-            <h2 style="font-size: 2.4rem; color: var(--primary-dark); margin-bottom: 40px;">Experiencias en Sucursal</h2>
+            <span class="section-badge" style="color: var(--primary-gold); border-color: rgba(0,119,182,0.3); background: rgba(0,119,182,0.06);">OPINIONES DE CLIENTES</span>
+            <h2 style="font-size: 2.4rem; color: var(--primary-dark); margin-bottom: 40px;">Lo que dicen nuestros clientes</h2>
             
             <div class="testimonial-grid grid-responsive" style="gap: 30px;">
-                <div class="testimonial-card animate-on-scroll fade-in-up" style="background: #ffffff; border-radius: var(--radius-md); padding: 30px; border: 1px solid #e5e5ea; text-align: left;">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card animate-on-scroll fade-in-up" style="background: #ffffff; border-radius: var(--radius-md); padding: 30px; border: 1px solid rgba(0,119,182,0.12); text-align: left; border-left: 4px solid var(--primary-gold);">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
                         <div style="display: flex; align-items: center; gap: 15px;">
-                            <div style="width: 42px; height: 42px; background-color: #111; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1rem;">C</div>
+                            <div style="width: 44px; height: 44px; background: linear-gradient(135deg, var(--primary-gold), var(--accent)); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1rem;">C</div>
                             <div>
-                                <h4 style="color: var(--primary-dark); margin: 0; font-size: 1rem;">Cliente en Mérida</h4>
-                                <span style="font-size: 0.8rem; color: #888;">Reseña en Google</span>
+                                <h4 style="color: var(--primary-dark); margin: 0; font-size: 1rem;">Carmen R.</h4>
+                                <span style="font-size: 0.8rem; color: #888;">Reseña verificada en Google</span>
                             </div>
                         </div>
                         <i class="fa-brands fa-google" style="color: #4285F4; font-size: 1.2rem;"></i>
@@ -298,16 +337,17 @@
                     <div class="stars" style="color: #fbbc05; margin-bottom: 10px; font-size: 0.9rem;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="testimonial-text" style="color: #333; margin-bottom: 0; line-height: 1.6; font-size: 0.95rem;">"Excelente atención y paciencia para explicar la graduación y los tipos de micas. La prueba de armazones en sucursal fue impecable."</p>
+                    <p style="color: #333; margin-bottom: 0; line-height: 1.6; font-size: 0.95rem;">"Excelente atención y paciencia para explicar la graduación y los tipos de micas. La prueba de armazones fue impecable, ¡me fui feliz con mis lentes nuevos!"</p>
                 </div>
 
-                <div class="testimonial-card animate-on-scroll fade-in-up" style="background: #ffffff; border-radius: var(--radius-md); padding: 30px; border: 1px solid #e5e5ea; text-align: left;">
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card animate-on-scroll fade-in-up" style="background: #ffffff; border-radius: var(--radius-md); padding: 30px; border: 1px solid rgba(0,119,182,0.12); text-align: left; border-left: 4px solid var(--primary-gold);">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
                         <div style="display: flex; align-items: center; gap: 15px;">
-                            <div style="width: 42px; height: 42px; background-color: #444; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1rem;">M</div>
+                            <div style="width: 44px; height: 44px; background: linear-gradient(135deg, #005f8e, var(--primary-gold)); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1rem;">M</div>
                             <div>
-                                <h4 style="color: var(--primary-dark); margin: 0; font-size: 1rem;">Cliente Verificado</h4>
-                                <span style="font-size: 0.8rem; color: #888;">Reseña en Google</span>
+                                <h4 style="color: var(--primary-dark); margin: 0; font-size: 1rem;">Marcos T.</h4>
+                                <span style="font-size: 0.8rem; color: #888;">Reseña verificada en Google</span>
                             </div>
                         </div>
                         <i class="fa-brands fa-google" style="color: #4285F4; font-size: 1.2rem;"></i>
@@ -315,21 +355,48 @@
                     <div class="stars" style="color: #fbbc05; margin-bottom: 10px; font-size: 0.9rem;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="testimonial-text" style="color: #333; margin-bottom: 0; line-height: 1.6; font-size: 0.95rem;">"Gran variedad de lentes oftalmicos y solares. Me explicaron las diferencias de micas antirreflejantes y quedé fascinado con el resultado."</p>
+                    <p style="color: #333; margin-bottom: 0; line-height: 1.6; font-size: 0.95rem;">"Gran variedad de lentes oftálmicos y solares. Me explicaron perfectamente las diferencias entre micas antirreflejantes. El resultado superó mis expectativas."</p>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="testimonial-card animate-on-scroll fade-in-up" style="background: #ffffff; border-radius: var(--radius-md); padding: 30px; border: 1px solid rgba(0,119,182,0.12); text-align: left; border-left: 4px solid var(--accent);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="width: 44px; height: 44px; background: linear-gradient(135deg, var(--accent), var(--primary-gold)); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1rem;">L</div>
+                            <div>
+                                <h4 style="color: var(--primary-dark); margin: 0; font-size: 1rem;">Laura V.</h4>
+                                <span style="font-size: 0.8rem; color: #888;">Reseña verificada en Google</span>
+                            </div>
+                        </div>
+                        <i class="fa-brands fa-google" style="color: #4285F4; font-size: 1.2rem;"></i>
+                    </div>
+                    <div class="stars" style="color: #fbbc05; margin-bottom: 10px; font-size: 0.9rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="color: #333; margin-bottom: 0; line-height: 1.6; font-size: 0.95rem;">"Llevé mis lentes rotos al Hospital de Lentes y los dejaron como nuevos con refacciones originales. El servicio de mantenimiento gratuito es un detalle increíble. ¡Recomendadísimos!"</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 8. Llamado Final a Agendar Cita -->
-    <section class="catalog-conversion" style="background-color: #08080a; border-top: 1px solid #1a1a1a; padding: 90px 0;">
-        <div class="container" style="max-width: 750px;">
-            <h3 style="font-size: 2.2rem; margin-bottom: 15px; font-weight: 600; color: #ffffff;">Visítanos en Plaza Dorada Mérida</h3>
-            <p style="color: #aaa; font-size: 1.15rem; line-height: 1.7; margin-bottom: 35px; font-weight: 300;">Recibe la asesoría personalizada que tu mirada se merece. Agenda tu diagnóstico o visítanos directamente para probarte la colección completa.</p>
-            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20mi%20diagn%C3%B3stico%20de%20graduaci%C3%B3n%20presencial." target="_blank" class="btn btn-primary-gold" style="background-color: #ffffff; color: #000000; padding: 15px 40px; font-size: 1.05rem;"><i class="fa-brands fa-whatsapp"></i> Agendar Diagnóstico por WhatsApp</a>
-                <a href="contacto.html" class="btn btn-outline-gold" style="padding: 15px 40px; font-size: 1.05rem; border-color: #fff; color: #fff;">Ver Ubicación y Horarios</a>
+    <section class="catalog-conversion" style="background: linear-gradient(135deg, var(--primary-dark) 0%, #0d2137 100%); border-top: 1px solid rgba(0,180,216,0.2); padding: 90px 0;">
+        <div class="container text-center" style="max-width: 750px;">
+            <span style="display: inline-block; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;">📍 Plaza Dorada · Mérida, Yucatán</span>
+            <h3 style="font-size: 2.2rem; margin-bottom: 15px; font-weight: 600; color: #ffffff;">¿Listo para ver mejor?</h3>
+            <p style="color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.7; margin-bottom: 35px; font-weight: 300;">Recibe la asesoría personalizada que mereces. Sin presiones, con tiempo y con alguien que realmente te escucha.</p>
+            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                <a href="https://wa.me/529999874504?text=Hola,%20quiero%20agendar%20mi%20diagn%C3%B3stico%20de%20graduaci%C3%B3n%20presencial." target="_blank" class="btn btn-primary-gold btn-pulse" style="padding: 15px 36px; font-size: 1.05rem;">
+                    <i class="fa-brands fa-whatsapp"></i> Agendar por WhatsApp
+                </a>
+                <a href="tel:+529999874504" class="btn btn-outline-gold" style="padding: 15px 36px; font-size: 1.05rem; border-color: rgba(255,255,255,0.5); color: #fff;">
+                    <i class="fa-solid fa-phone"></i> Llamar al Local
+                </a>
+                <a href="contacto.html" class="btn btn-outline-gold" style="padding: 15px 36px; font-size: 1.05rem; border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.75);">
+                    <i class="fa-solid fa-location-dot"></i> Ver Ubicación
+                </a>
             </div>
+            <p style="color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px;">Lun – Dom · 10:00 am – 8:00 pm · Sin cita previa</p>
         </div>
     </section>
 
