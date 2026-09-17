@@ -4,13 +4,13 @@
 
 /* --- CSS Variables --- */
 :root {
-    --primary-dark: #0a1628;        /* Azul noche profundo */
-    --primary-gold: #0077b6;        /* Azul océano vivo (reemplaza "gold") */
-    --gold-hover: #005f8e;          /* Azul más oscuro para hover */
-    --accent: #00b4d8;              /* Cyan fresco — acento */
-    --text-dark: #111827;           /* Casi negro con tinte azul */
-    --text-light: #4b5563;          /* Gris azulado */
-    --bg-light: #f0f8ff;            /* Alice blue — fondo suave */
+    --primary-dark: #000000;        /* Negro puro */
+    --primary-gold: #1a1a1a;        /* Gris casi negro */
+    --gold-hover: #333333;          /* Gris oscuro para hover */
+    --accent: #555555;              /* Gris medio - acento */
+    --text-dark: #111111;           /* Negro suave */
+    --text-light: #666666;          /* Gris medio */
+    --bg-light: #f7f7f7;            /* Gris muy claro - fondo suave */
     --bg-white: #FFFFFF;
     --whatsapp-green: #25D366;
     --whatsapp-hover: #128C7E;
@@ -20,7 +20,7 @@
     --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
     --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
     --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
-    --shadow-gold: 0 10px 20px rgba(0, 119, 182, 0.25);
+    --shadow-gold: 0 10px 20px rgba(0, 0, 0, 0.25);
     
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -185,7 +185,7 @@ h2 {
 .btn-primary-gold:hover {
     background: linear-gradient(135deg, var(--gold-hover) 0%, var(--primary-gold) 100%);
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(0, 119, 182, 0.35);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
 }
 
 /* Alias para claridad semántica */
@@ -198,7 +198,7 @@ h2 {
 .btn-primary-blue:hover {
     background: linear-gradient(135deg, var(--gold-hover) 0%, var(--primary-gold) 100%);
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(0, 119, 182, 0.35);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
 }
 
 .btn-outline-gold {
@@ -243,9 +243,9 @@ h2 {
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.5); }
-    70% { box-shadow: 0 0 0 15px rgba(0, 180, 216, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 0, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
 }
 
 /* --- Navbar --- */
@@ -254,13 +254,13 @@ h2 {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(10, 22, 40, 0.95);
+    background-color: rgba(17, 17, 17, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     z-index: 1000;
     padding: 10px 0;
-    box-shadow: 0 2px 20px rgba(0, 119, 182, 0.15);
-    border-bottom: 1px solid rgba(0, 180, 216, 0.12);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     transition: var(--transition);
 }
 
@@ -1292,7 +1292,7 @@ model-viewer {
 }
 
 .brand-bar {
-    background: linear-gradient(135deg, var(--primary-dark) 0%, #0d2137 100%);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #111111 100%);
     padding: 20px 0;
     overflow: hidden;
     position: relative;
@@ -1372,7 +1372,7 @@ model-viewer {
 .trust-icon {
     width: 70px;
     height: 70px;
-    background: rgba(0, 119, 182, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     color: var(--primary-gold);
     border-radius: 50%;
     display: flex;
@@ -1452,7 +1452,7 @@ model-viewer {
     border-radius: var(--radius-lg);
     padding: 36px 28px;
     text-align: center;
-    border: 1px solid rgba(0, 119, 182, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     position: relative;
@@ -1479,13 +1479,13 @@ model-viewer {
 .servicio-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-md);
-    border-color: rgba(0, 119, 182, 0.3);
+    border-color: rgba(0, 0, 0, 0.3);
 }
 
 .servicio-icon {
     width: 68px;
     height: 68px;
-    background: linear-gradient(135deg, rgba(0, 119, 182, 0.1), rgba(0, 180, 216, 0.1));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -2524,13 +2524,13 @@ model-viewer {
     border-radius: var(--radius-md);
     padding: 30px 20px;
     text-align: center;
-    border: 1px solid rgba(0, 119, 182, 0.12); /* Light blue border */
+    border: 1px solid rgba(0, 0, 0, 0.12); /* Light blue border */
     transition: all 0.3s ease;
 }
 
 .visagismo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 119, 182, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     border-color: var(--accent);
 }
 
@@ -2539,7 +2539,7 @@ model-viewer {
     width: 80px;
     height: 80px;
     margin: 0 auto 18px;
-    background: rgba(0, 119, 182, 0.08); /* Light blue */
+    background: rgba(0, 0, 0, 0.08); /* Light blue */
     border-radius: 50%;
     display: flex;
     justify-content: center;
