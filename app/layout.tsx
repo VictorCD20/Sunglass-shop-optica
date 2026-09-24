@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { ScrollMotion } from "@/components/scroll-motion";
 import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/gtm";
 import { OpticianSchema } from "@/components/optician-schema";
+import { ComingSoonGuard } from "@/components/coming-soon-guard";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -76,12 +77,13 @@ export default function RootLayout({
       <body>
         <GoogleTagManagerNoScript />
         <OpticianSchema />
-        <SiteHeader />
-        <ScrollMotion />
-        {children}
-        <SiteFooter />
+        <ComingSoonGuard>
+          <SiteHeader />
+          <ScrollMotion />
+          {children}
+          <SiteFooter />
+        </ComingSoonGuard>
       </body>
     </html>
   );
 }
-
