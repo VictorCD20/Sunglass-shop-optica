@@ -27,16 +27,6 @@ export function ComingSoonGuard({ children }: ComingSoonGuardProps) {
     }
   }, []);
 
-  const handleDisableComingSoon = () => {
-    setIsComingSoon(false);
-    localStorage.setItem("sunglass_dev_preview", "true");
-  };
-
-  const handleEnableComingSoon = () => {
-    setIsComingSoon(true);
-    localStorage.setItem("sunglass_dev_preview", "false");
-  };
-
   if (!isMounted) {
     // Before client hydration finishes, default to Coming Soon page if enabled
     const defaultEnv = process.env.NEXT_PUBLIC_COMING_SOON !== "false";
@@ -44,21 +34,8 @@ export function ComingSoonGuard({ children }: ComingSoonGuardProps) {
   }
 
   if (isComingSoon) {
-    return <ComingSoonLanding onDisableComingSoon={handleDisableComingSoon} />;
+    return <ComingSoonLanding />;
   }
 
-  return (
-    <>
-      <div className="bg-[#111] border-b border-[#d8a62f]/30 px-4 py-1.5 text-center text-xs text-[#d8a62f] flex items-center justify-center gap-3">
-        <span>⚡ Modo Desarrollador: Estás viendo el sitio completo.</span>
-        <button
-          onClick={handleEnableComingSoon}
-          className="underline font-bold text-white hover:text-[#d8a62f] transition-colors"
-        >
-          Activar modo &quot;Próximamente&quot;
-        </button>
-      </div>
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

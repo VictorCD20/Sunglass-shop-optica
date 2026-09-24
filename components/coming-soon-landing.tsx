@@ -65,16 +65,6 @@ export function ComingSoonLanding({ onDisableComingSoon }: ComingSoonLandingProp
         </div>
 
         <div className="flex items-center gap-3">
-          {onDisableComingSoon && (
-            <button 
-              onClick={onDisableComingSoon}
-              title="Alternar modo vista previa del sitio completo para desarrolladores"
-              className="text-xs bg-white/10 hover:bg-white/20 text-white/80 hover:text-white px-3 py-1.5 rounded-full transition-all border border-white/15"
-            >
-              Ver sitio completo (Dev Preview)
-            </button>
-          )}
-
           <TrackedWhatsappLink 
             href={whatsapp(WHATSAPP_MESSAGES.general)} 
             eventName="click_whatsapp_header_comingsoon" 
